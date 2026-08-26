@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "kind": "xiaozhuang-dsh-plugin-export",
-  "createdAt": "2026-08-26T18:54:20.398Z",
-  "sourceCommit": "30f0515497fcf88afec9a3cae96bd3b540a5da47",
+  "createdAt": "2026-08-26T19:23:52.779Z",
+  "sourceCommit": "a994ac03fb3fdb22e732f5ac4f4da46d1168cff7",
   "plugins": [
     {
       "id": "selection-actions",
@@ -245,8 +245,8 @@
     },
     {
       "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/lib/client.js",
-      "size": 32878,
-      "sha256": "7b285329def416276bfc9c1233a1bf07f70ac1c5c378b8e4af5dbc69538c048f"
+      "size": 32966,
+      "sha256": "e273a057e44cc612a4bf841a6d6863041be51cbd14262669e0736b5a1019bb6d"
     },
     {
       "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/lib/index.js",
@@ -325,8 +325,8 @@
     },
     {
       "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/src/client/SelectionActions.tsx",
-      "size": 7410,
-      "sha256": "acaf84ccf4cfe6da2923909947385460ef6438a27d4967b741762314424c1b46"
+      "size": 7590,
+      "sha256": "ae0aa45fff41187ff9a5ac4657c874a4eabde07d361ba26992ed4ad61aeb9fd6"
     },
     {
       "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/src/client/SelectionReferenceDock.module.css",

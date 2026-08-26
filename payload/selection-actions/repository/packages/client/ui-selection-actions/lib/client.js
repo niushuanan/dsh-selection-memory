@@ -5,11 +5,10 @@ window.__ModuleLoader__.load({
 		var exports = module.exports;
 		Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
 		let _deepseek_ai_dsh_client_runtime_client = require("@deepseek-ai/dsh-client-runtime/client");
-		let react_jsx_runtime = require("react/jsx-runtime");
 		let react = require("react");
 		let _deepseek_ai_dsh_client_ui_primitives = require("@deepseek-ai/dsh-client-ui-primitives");
-		//#region lib/types/client/api.js
-		/** Loopback call used by the selection plugin without importing the memory plugin bundle. */
+		let react_jsx_runtime = require("react/jsx-runtime");
+		//#region src/client/api.ts
 		const API = "/plugins/memory-system/api";
 		/** Distinguishes an independently disabled memory plugin from a failed model call. */
 		var MemoryUnavailableError = class extends Error {
@@ -49,8 +48,7 @@ window.__ModuleLoader__.load({
 			}));
 		}
 		//#endregion
-		//#region lib/types/client/reference.js
-		/** Compact composer projection and hidden model serialization of a selection. */
+		//#region src/client/reference.ts
 		function encode(payload) {
 			return encodeURIComponent(JSON.stringify(payload));
 		}
@@ -96,8 +94,7 @@ window.__ModuleLoader__.load({
 			].join("\n");
 		}
 		//#endregion
-		//#region lib/types/client/flow.js
-		/** Native same-workspace conversation creation and unsent quote insertion. */
+		//#region src/client/flow.ts
 		const QUOTE_HANDOFF_PREFIX = "dsh.selection-quote.";
 		function handoffKey(sessionId) {
 			return `${QUOTE_HANDOFF_PREFIX}${sessionId}`;
@@ -178,7 +175,7 @@ window.__ModuleLoader__.load({
 			};
 		}
 		//#endregion
-		//#region lib/types/client/locales.js
+		//#region src/client/locales.ts
 		const NS = "selectionActions";
 		const zh = {
 			quote: "引用",
@@ -213,8 +210,7 @@ window.__ModuleLoader__.load({
 			"memory.done": "Saved to user memory"
 		};
 		//#endregion
-		//#region lib/types/client/selection.js
-		/** DOM-to-product selection packet conversion for native DSH conversations. */
+		//#region src/client/selection.ts
 		function elementOf(node) {
 			if (node === null) return null;
 			return node.nodeType === Node.ELEMENT_NODE ? node : node.parentElement;
@@ -271,8 +267,8 @@ window.__ModuleLoader__.load({
 			};
 		}
 		//#endregion
-		//#region \0dsh-css:dsh-source/packages/client/ui-selection-actions/src/client/SelectionActions.module.css.mjs
-		const css$1 = ".sqb5xa_root{z-index:1200;pointer-events:auto;border:1px solid color-mix(in srgb,var(--dsw-alias-label-primary) 10%,transparent);background:color-mix(in srgb,var(--dsw-alias-bg-layer-1) 96%,transparent);backdrop-filter:blur(14px);border-radius:10px;max-width:min(320px,100vw - 24px);position:fixed;overflow:hidden;box-shadow:0 8px 28px #00000029}.sqb5xa_actions{padding:4px;display:flex}.sqb5xa_actions button,.sqb5xa_result button{height:30px;color:var(--dsw-alias-label-primary);font:inherit;cursor:pointer;white-space:nowrap;background:0 0;border:0;border-radius:7px;justify-content:center;align-items:center;gap:6px;padding:0 10px;font-size:11px;display:inline-flex}.sqb5xa_actions button:hover,.sqb5xa_result button:hover{background:var(--dsw-alias-bg-layer-2)}.sqb5xa_actions button:disabled,.sqb5xa_result button:disabled{cursor:default;opacity:.55}.sqb5xa_result{color:var(--dsw-alias-label-secondary);align-items:center;gap:8px;padding:7px 9px;font-size:11px;line-height:16px;display:flex}.sqb5xa_result span{text-overflow:ellipsis;white-space:nowrap;min-width:0;overflow:hidden}.sqb5xa_result button{height:24px;color:var(--dsw-alias-label-primary);flex:none;padding:0 6px;font-weight:600}.sqb5xa_error{border-top:1px solid var(--dsw-alias-border-l1);max-width:280px;color:var(--dsw-alias-red-primary,#d92d20);padding:7px 10px;font-size:10px;line-height:15px}.sqb5xa_sourceMarker{z-index:1150;background:var(--dsw-alias-state-business-primary);width:24px;height:24px;box-shadow:0 3px 12px color-mix(in srgb,var(--dsw-alias-state-business-primary) 28%,transparent);color:#fff;border-radius:8px 8px 8px 2px;outline:none;place-items:center;font-size:11px;font-weight:600;display:inline-grid;position:fixed}.sqb5xa_sourcePreview{border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-bg-layer-1);width:max-content;max-width:min(500px,100vw - 56px);box-shadow:var(--dsw-shadow-lv2);color:var(--dsw-alias-label-primary);white-space:pre-wrap;border-radius:14px;gap:10px;padding:12px 14px;font-size:13px;font-weight:400;line-height:20px;display:none;position:absolute;top:0;right:calc(100% + 8px)}.sqb5xa_sourceMarker:hover .sqb5xa_sourcePreview,.sqb5xa_sourceMarker:focus-visible .sqb5xa_sourcePreview{display:flex}.sqb5xa_sourcePreview>:first-child{color:var(--dsw-alias-label-tertiary)}";
+		//#region \0dsh-css:/Users/zhuanghongkai/Desktop/迭代DSH/xiaozhuang-dsh/packages/client/ui-selection-actions/src/client/SelectionActions.module.css.mjs
+		const css$1 = ".SrV-uW_root{z-index:1200;pointer-events:auto;border:1px solid color-mix(in srgb,var(--dsw-alias-label-primary) 10%,transparent);background:color-mix(in srgb,var(--dsw-alias-bg-layer-1) 96%,transparent);backdrop-filter:blur(14px);border-radius:10px;max-width:min(320px,100vw - 24px);position:fixed;overflow:hidden;box-shadow:0 8px 28px #00000029}.SrV-uW_actions{padding:4px;display:flex}.SrV-uW_actions button,.SrV-uW_result button{height:30px;color:var(--dsw-alias-label-primary);font:inherit;cursor:pointer;white-space:nowrap;background:0 0;border:0;border-radius:7px;justify-content:center;align-items:center;gap:6px;padding:0 10px;font-size:11px;display:inline-flex}.SrV-uW_actions button:hover,.SrV-uW_result button:hover{background:var(--dsw-alias-bg-layer-2)}.SrV-uW_actions button:disabled,.SrV-uW_result button:disabled{cursor:default;opacity:.55}.SrV-uW_result{color:var(--dsw-alias-label-secondary);align-items:center;gap:8px;padding:7px 9px;font-size:11px;line-height:16px;display:flex}.SrV-uW_result span{text-overflow:ellipsis;white-space:nowrap;min-width:0;overflow:hidden}.SrV-uW_result button{height:24px;color:var(--dsw-alias-label-primary);flex:none;padding:0 6px;font-weight:600}.SrV-uW_error{border-top:1px solid var(--dsw-alias-border-l1);max-width:280px;color:var(--dsw-alias-red-primary,#d92d20);padding:7px 10px;font-size:10px;line-height:15px}.SrV-uW_sourceMarker{z-index:1150;background:var(--dsw-alias-state-business-primary);width:24px;height:24px;box-shadow:0 3px 12px color-mix(in srgb,var(--dsw-alias-state-business-primary) 28%,transparent);color:#fff;border-radius:8px 8px 8px 2px;outline:none;place-items:center;font-size:11px;font-weight:600;display:inline-grid;position:fixed}.SrV-uW_sourcePreview{border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-bg-layer-1);width:max-content;max-width:min(500px,100vw - 56px);box-shadow:var(--dsw-shadow-lv2);color:var(--dsw-alias-label-primary);white-space:pre-wrap;border-radius:14px;gap:10px;padding:12px 14px;font-size:13px;font-weight:400;line-height:20px;display:none;position:absolute;top:0;right:calc(100% + 8px)}.SrV-uW_sourceMarker:hover .SrV-uW_sourcePreview,.SrV-uW_sourceMarker:focus-visible .SrV-uW_sourcePreview{display:flex}.SrV-uW_sourcePreview>:first-child{color:var(--dsw-alias-label-tertiary)}";
 		const tagId$1 = "@deepseek-ai/dsh-client-ui-selection-actions/SelectionActions.module.css";
 		if (typeof document !== "undefined" && document.querySelector("style[data-plugin-css=" + JSON.stringify(tagId$1) + "]") === null) {
 			const tag = document.createElement("style");
@@ -282,15 +278,15 @@ window.__ModuleLoader__.load({
 			document.head.appendChild(tag);
 		}
 		var SelectionActions_module_css_default = {
-			"actions": "sqb5xa_actions",
-			"error": "sqb5xa_error",
-			"result": "sqb5xa_result",
-			"root": "sqb5xa_root",
-			"sourceMarker": "sqb5xa_sourceMarker",
-			"sourcePreview": "sqb5xa_sourcePreview"
+			"actions": "SrV-uW_actions",
+			"error": "SrV-uW_error",
+			"result": "SrV-uW_result",
+			"root": "SrV-uW_root",
+			"sourceMarker": "SrV-uW_sourceMarker",
+			"sourcePreview": "SrV-uW_sourcePreview"
 		};
 		//#endregion
-		//#region lib/types/client/SelectionSourceMarker.js
+		//#region src/client/SelectionSourceMarker.tsx
 		function sourceMarkerPosition(rect, number, viewport) {
 			if (rect.bottom <= 0 || rect.top >= viewport.height) return void 0;
 			return {
@@ -336,20 +332,20 @@ window.__ModuleLoader__.load({
 				reference
 			]);
 			if (!active || position === void 0) return null;
-			return (0, react_jsx_runtime.jsxs)("span", {
+			return /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
 				className: SelectionActions_module_css_default.sourceMarker,
 				style: position,
 				tabIndex: 0,
 				"aria-label": `引用 ${number}`,
-				children: [number, (0, react_jsx_runtime.jsxs)("span", {
+				children: [number, /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
 					className: SelectionActions_module_css_default.sourcePreview,
 					role: "tooltip",
-					children: [(0, react_jsx_runtime.jsxs)("span", { children: [number, "."] }), (0, react_jsx_runtime.jsx)("span", { children: reference.packet.selectedText })]
+					children: [/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", { children: [number, "."] }), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", { children: reference.packet.selectedText })]
 				})]
 			});
 		}
 		//#endregion
-		//#region lib/types/client/SelectionActions.js
+		//#region src/client/SelectionActions.tsx
 		/** Selection-anchored action bar shared by primary and embedded DSH panes. */
 		function SelectionActions({ capture, quote, sideChat, remember, undo, t }) {
 			const root = (0, react.useRef)(null);
@@ -387,7 +383,7 @@ window.__ModuleLoader__.load({
 				};
 				const dismiss = (event) => {
 					if (root.current?.contains(event.target) === true) return;
-					if (document.getSelection()?.isCollapsed !== false) setPacket(void 0);
+					setPacket(void 0);
 				};
 				const key = (event) => {
 					if (event.key === "Escape") setPacket(void 0);
@@ -475,10 +471,10 @@ window.__ModuleLoader__.load({
 					setBusy(void 0);
 				}
 			};
-			return (0, react_jsx_runtime.jsxs)(react_jsx_runtime.Fragment, { children: [references.map((reference, index) => (0, react_jsx_runtime.jsx)(SelectionSourceMarker, {
+			return /* @__PURE__ */ (0, react_jsx_runtime.jsxs)(react_jsx_runtime.Fragment, { children: [references.map((reference, index) => /* @__PURE__ */ (0, react_jsx_runtime.jsx)(SelectionSourceMarker, {
 				reference,
 				number: index + 1
-			}, reference.occurrenceId)), packet === void 0 ? null : (0, react_jsx_runtime.jsxs)("div", {
+			}, reference.occurrenceId)), packet === void 0 ? null : /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
 				ref: root,
 				className: SelectionActions_module_css_default.root,
 				style: {
@@ -491,39 +487,39 @@ window.__ModuleLoader__.load({
 					event.preventDefault();
 				},
 				children: [
-					remembered === void 0 && message === "" ? (0, react_jsx_runtime.jsxs)("div", {
+					remembered === void 0 && message === "" ? /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
 						className: SelectionActions_module_css_default.actions,
 						children: [
-							(0, react_jsx_runtime.jsxs)("button", {
+							/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("button", {
 								type: "button",
 								disabled: busy !== void 0,
 								onClick: () => {
 									runQuote();
 								},
-								children: [(0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.IconQuoteOutline16, { size: 14 }), busy === "quote" ? t("quoting") : t("quote")]
+								children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.IconQuoteOutline16, { size: 14 }), busy === "quote" ? t("quoting") : t("quote")]
 							}),
-							(0, react_jsx_runtime.jsxs)("button", {
+							/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("button", {
 								type: "button",
 								disabled: busy !== void 0,
 								onClick: () => {
 									runMemory();
 								},
-								children: [(0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.IconMemoryOutline16, { size: 14 }), busy === "memory" ? t("remembering") : t("memory")]
+								children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.IconMemoryOutline16, { size: 14 }), busy === "memory" ? t("remembering") : t("memory")]
 							}),
-							(0, react_jsx_runtime.jsxs)("button", {
+							/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("button", {
 								type: "button",
 								disabled: busy !== void 0,
 								onClick: () => {
 									runSideChat();
 								},
-								children: [(0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.IconWindowNewOutline16, { size: 14 }), busy === "sideChat" ? t("openingSideChat") : t("sideChat")]
+								children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.IconWindowNewOutline16, { size: 14 }), busy === "sideChat" ? t("openingSideChat") : t("sideChat")]
 							})
 						]
 					}) : null,
-					message !== "" ? (0, react_jsx_runtime.jsxs)("div", {
+					message !== "" ? /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
 						className: SelectionActions_module_css_default.result,
 						role: "status",
-						children: [(0, react_jsx_runtime.jsx)("span", { children: message }), remembered === void 0 ? null : (0, react_jsx_runtime.jsx)("button", {
+						children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", { children: message }), remembered === void 0 ? null : /* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
 							type: "button",
 							disabled: busy !== void 0,
 							onClick: () => {
@@ -532,7 +528,7 @@ window.__ModuleLoader__.load({
 							children: t("undo")
 						})]
 					}) : null,
-					error === "" ? null : (0, react_jsx_runtime.jsx)("div", {
+					error === "" ? null : /* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
 						className: SelectionActions_module_css_default.error,
 						role: "alert",
 						children: error
@@ -541,8 +537,8 @@ window.__ModuleLoader__.load({
 			})] });
 		}
 		//#endregion
-		//#region \0dsh-css:dsh-source/packages/client/ui-selection-actions/src/client/SelectionReferenceDock.module.css.mjs
-		const css = ".luUFqq_dock{box-sizing:border-box;width:calc(100% - 2 * var(--dsh-composer-side-clearance) - 4 * var(--dsh-composer-dock-inset));max-width:calc(var(--dsh-composer-card-max-width) - 4 * var(--dsh-composer-dock-inset));margin:0 auto}.luUFqq_row{flex-wrap:wrap;gap:6px;display:flex;position:relative}.luUFqq_annotation{border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-specific-input-major);min-width:0;height:32px;color:var(--dsw-alias-label-primary);box-shadow:var(--dsw-shadow-lv1);border-radius:12px;align-items:center;gap:6px;padding:0 5px 0 10px;font-size:12px;display:inline-flex}.luUFqq_marker{background:var(--dsw-alias-state-business-primary);color:#fff;border-radius:5px 5px 5px 1px;place-items:center;width:16px;height:16px;font-size:10px;line-height:1;display:inline-grid}.luUFqq_label{white-space:nowrap}.luUFqq_remove{width:24px;height:24px;color:var(--dsw-alias-label-tertiary);cursor:pointer;background:0 0;border:0;border-radius:999px;place-items:center;padding:0;display:inline-grid}.luUFqq_remove:hover{background:var(--dsw-alias-interactive-bg-hover);color:var(--dsw-alias-label-primary)}.luUFqq_preview{z-index:20;box-sizing:border-box;border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-bg-layer-1);width:max-content;max-width:min(520px,100%);box-shadow:var(--dsw-shadow-lv2);color:var(--dsw-alias-label-primary);white-space:pre-wrap;border-radius:14px;padding:12px 14px;font-size:13px;line-height:20px;display:none;position:absolute;bottom:calc(100% + 8px);right:0}.luUFqq_annotation:hover .luUFqq_preview,.luUFqq_annotation:focus-within .luUFqq_preview{gap:10px;display:flex}.luUFqq_previewNumber{color:var(--dsw-alias-label-tertiary);flex:none}.luUFqq_preview>:last-child{overflow-wrap:anywhere;min-width:0}";
+		//#region \0dsh-css:/Users/zhuanghongkai/Desktop/迭代DSH/xiaozhuang-dsh/packages/client/ui-selection-actions/src/client/SelectionReferenceDock.module.css.mjs
+		const css = ".IZ4NWG_dock{box-sizing:border-box;width:calc(100% - 2 * var(--dsh-composer-side-clearance) - 4 * var(--dsh-composer-dock-inset));max-width:calc(var(--dsh-composer-card-max-width) - 4 * var(--dsh-composer-dock-inset));margin:0 auto}.IZ4NWG_row{flex-wrap:wrap;gap:6px;display:flex;position:relative}.IZ4NWG_annotation{border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-specific-input-major);min-width:0;height:32px;color:var(--dsw-alias-label-primary);box-shadow:var(--dsw-shadow-lv1);border-radius:12px;align-items:center;gap:6px;padding:0 5px 0 10px;font-size:12px;display:inline-flex}.IZ4NWG_marker{background:var(--dsw-alias-state-business-primary);color:#fff;border-radius:5px 5px 5px 1px;place-items:center;width:16px;height:16px;font-size:10px;line-height:1;display:inline-grid}.IZ4NWG_label{white-space:nowrap}.IZ4NWG_remove{width:24px;height:24px;color:var(--dsw-alias-label-tertiary);cursor:pointer;background:0 0;border:0;border-radius:999px;place-items:center;padding:0;display:inline-grid}.IZ4NWG_remove:hover{background:var(--dsw-alias-interactive-bg-hover);color:var(--dsw-alias-label-primary)}.IZ4NWG_preview{z-index:20;box-sizing:border-box;border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-bg-layer-1);width:max-content;max-width:min(520px,100%);box-shadow:var(--dsw-shadow-lv2);color:var(--dsw-alias-label-primary);white-space:pre-wrap;border-radius:14px;padding:12px 14px;font-size:13px;line-height:20px;display:none;position:absolute;bottom:calc(100% + 8px);right:0}.IZ4NWG_annotation:hover .IZ4NWG_preview,.IZ4NWG_annotation:focus-within .IZ4NWG_preview{gap:10px;display:flex}.IZ4NWG_previewNumber{color:var(--dsw-alias-label-tertiary);flex:none}.IZ4NWG_preview>:last-child{overflow-wrap:anywhere;min-width:0}";
 		const tagId = "@deepseek-ai/dsh-client-ui-selection-actions/SelectionReferenceDock.module.css";
 		if (typeof document !== "undefined" && document.querySelector("style[data-plugin-css=" + JSON.stringify(tagId) + "]") === null) {
 			const tag = document.createElement("style");
@@ -552,17 +548,17 @@ window.__ModuleLoader__.load({
 			document.head.appendChild(tag);
 		}
 		var SelectionReferenceDock_module_css_default = {
-			"annotation": "luUFqq_annotation",
-			"dock": "luUFqq_dock",
-			"label": "luUFqq_label",
-			"marker": "luUFqq_marker",
-			"preview": "luUFqq_preview",
-			"previewNumber": "luUFqq_previewNumber",
-			"remove": "luUFqq_remove",
-			"row": "luUFqq_row"
+			"annotation": "IZ4NWG_annotation",
+			"dock": "IZ4NWG_dock",
+			"label": "IZ4NWG_label",
+			"marker": "IZ4NWG_marker",
+			"preview": "IZ4NWG_preview",
+			"previewNumber": "IZ4NWG_previewNumber",
+			"remove": "IZ4NWG_remove",
+			"row": "IZ4NWG_row"
 		};
 		//#endregion
-		//#region lib/types/client/SelectionReferenceDock.js
+		//#region src/client/SelectionReferenceDock.tsx
 		/** Compact selected-text annotations above the composer, with source preview on hover/focus. */
 		function SelectionReferenceDock({ input, removeReference, t }) {
 			const references = input.occurrences.flatMap((occurrence) => {
@@ -577,38 +573,38 @@ window.__ModuleLoader__.load({
 				}
 			});
 			if (references.length === 0) return null;
-			return (0, react_jsx_runtime.jsx)("div", {
+			return /* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
 				className: SelectionReferenceDock_module_css_default.dock,
-				children: (0, react_jsx_runtime.jsx)("div", {
+				children: /* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
 					className: SelectionReferenceDock_module_css_default.row,
-					children: references.map(({ occurrence, payload }, index) => (0, react_jsx_runtime.jsxs)("div", {
+					children: references.map(({ occurrence, payload }, index) => /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
 						className: SelectionReferenceDock_module_css_default.annotation,
 						children: [
-							(0, react_jsx_runtime.jsx)("span", {
+							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
 								className: SelectionReferenceDock_module_css_default.marker,
 								"aria-hidden": true,
 								children: index + 1
 							}),
-							index === 0 ? (0, react_jsx_runtime.jsx)("span", {
+							index === 0 ? /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
 								className: SelectionReferenceDock_module_css_default.label,
 								children: t("quote.count", { count: references.length })
 							}) : null,
-							(0, react_jsx_runtime.jsx)("button", {
+							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
 								type: "button",
 								className: SelectionReferenceDock_module_css_default.remove,
 								"aria-label": t("quote.remove"),
 								onClick: () => {
 									removeReference(occurrence.occurrenceId);
 								},
-								children: (0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.IconCloseOutline16, { size: 13 })
+								children: /* @__PURE__ */ (0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.IconCloseOutline16, { size: 13 })
 							}),
-							(0, react_jsx_runtime.jsxs)("span", {
+							/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
 								className: SelectionReferenceDock_module_css_default.preview,
 								role: "tooltip",
-								children: [(0, react_jsx_runtime.jsxs)("span", {
+								children: [/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
 									className: SelectionReferenceDock_module_css_default.previewNumber,
 									children: [index + 1, "."]
-								}), (0, react_jsx_runtime.jsx)("span", { children: payload.selectedText })]
+								}), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", { children: payload.selectedText })]
 							})
 						]
 					}, occurrence.occurrenceId))
@@ -616,7 +612,7 @@ window.__ModuleLoader__.load({
 			});
 		}
 		//#endregion
-		//#region lib/types/client/index.js
+		//#region src/client/index.ts
 		/** Browser half of DSH's native quote and memory selection actions. */
 		const inject = [
 			"slots",
