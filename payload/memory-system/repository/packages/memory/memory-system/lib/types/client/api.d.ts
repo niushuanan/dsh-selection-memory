@@ -1,5 +1,5 @@
 /** Browser transport for the fixed global memory documents and selection action. */
-import type { MemoryDocumentKind, MemoryDocumentView, MemoryState, SelectionMemorySource } from '../types.ts';
+import type { MaintenanceOutcome, MemoryDocumentKind, MemoryDocumentView, MemoryState, SelectionMemorySource } from '../types.ts';
 export interface MemoryDocumentsResponse {
     readonly user: MemoryDocumentView;
     readonly ai: MemoryDocumentView;
@@ -17,4 +17,9 @@ export declare function rememberSelection(source: SelectionMemorySource): Promis
     readonly changed: boolean;
     readonly revision: string;
 }>;
+/** Ask the Host for one immediate AI-memory pass that includes brand-new messages.
+ *
+ * @returns The pass outcome as the Host scheduler reports it.
+ */
+export declare function organizeAiMemory(): Promise<MaintenanceOutcome>;
 //# sourceMappingURL=api.d.ts.map

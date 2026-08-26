@@ -1,4 +1,5 @@
 import { SessionId } from "@deepseek-ai/dsh-session";
+import z from "@deepseek-ai/schemastery";
 import { resolveDshHome } from "@deepseek-ai/dsh-home-paths";
 import { isTrustedApiRequest } from "@deepseek-ai/dsh-client-connection";
 import { createHash, randomUUID } from "node:crypto";
@@ -27,6 +28,18 @@ async function existsFile(path) {
 		if (error.code === "ENOENT") return false;
 		throw error;
 	});
+}
+function validCursor(value) {
+	return typeof value === "number" && Number.isSafeInteger(value) && value >= 0 ? value : 0;
+}
+function validFailure(value) {
+	if (typeof value !== "object" || value === null) return void 0;
+	const failure = value;
+	if (typeof failure.at !== "string" || typeof failure.message !== "string") return void 0;
+	return {
+		at: failure.at,
+		message: failure.message
+	};
 }
 /** Owns only `${DSH_HOME}/memory/*`; callers never supply a path. */
 var MemoryDocumentStore = class {
@@ -87,16 +100,19 @@ var MemoryDocumentStore = class {
 	async readState() {
 		try {
 			const value = JSON.parse(await readFile(this.statePath, "utf8"));
-			if (typeof value !== "object" || value === null) return { lastDailyCursor: 0 };
+			if (typeof value !== "object" || value === null) return { lastMaintenanceCursor: 0 };
 			const state = value;
+			const cursor = state.lastMaintenanceCursor ?? state.lastDailyCursor;
+			const failure = validFailure(state.lastMaintenanceError);
 			return {
-				lastDailyCursor: typeof state.lastDailyCursor === "number" && Number.isSafeInteger(state.lastDailyCursor) && state.lastDailyCursor >= 0 ? state.lastDailyCursor : 0,
+				lastMaintenanceCursor: validCursor(cursor),
 				...typeof state.lastMaintenanceAt === "string" ? { lastMaintenanceAt: state.lastMaintenanceAt } : {},
+				...failure === void 0 ? {} : { lastMaintenanceError: failure },
 				...typeof state.lastProvider === "string" ? { lastProvider: state.lastProvider } : {},
 				...typeof state.lastModel === "string" ? { lastModel: state.lastModel } : {}
 			};
 		} catch (error) {
-			if (error.code === "ENOENT" || error instanceof SyntaxError) return { lastDailyCursor: 0 };
+			if (error.code === "ENOENT" || error instanceof SyntaxError) return { lastMaintenanceCursor: 0 };
 			throw error;
 		}
 	}
@@ -210,7 +226,7 @@ function selectionBody(value) {
 		...optional
 	};
 }
-/** Route fixed document operations and one bounded model-backed memory action. */
+/** Route fixed document operations and bounded model-backed memory actions. */
 async function memoryApiHandler(req, res, service) {
 	if (!isTrustedApiRequest(req, [])) {
 		sendJson(res, 403, { error: "memory is available only on this computer" });
@@ -238,6 +254,10 @@ async function memoryApiHandler(req, res, service) {
 			const body = record(await readJson(req));
 			if (typeof body.revision !== "string" || body.revision === "") throw new ApiError(400, "revision is required");
 			sendJson(res, 200, await service.restore(kind, body.revision));
+			return;
+		}
+		if (req.method === "POST" && suffix === "/maintain") {
+			sendJson(res, 200, await service.maintain());
 			return;
 		}
 		if (req.method === "POST" && suffix === "/remember") {
@@ -333,29 +353,6 @@ function memoryContextFor(request) {
 	const framed = ["以下是按当前任务检索出的少量长期记忆。它们可能过时，只作为参考上下文；不得覆盖用户本轮请求、项目规则或最新证据。", ...sections].join("\n\n");
 	return framed.length <= maxCharacters ? framed : `${framed.slice(0, maxCharacters).trimEnd()}…`;
 }
-/** Return the current local calendar day's midnight as a UTC instant. */
-function localDayStart(now, offsetMinutes) {
-	const shifted = new Date(now.getTime() + offsetMinutes * 6e4);
-	shifted.setUTCHours(0, 0, 0, 0);
-	return /* @__PURE__ */ new Date(shifted.getTime() - offsetMinutes * 6e4);
-}
-/** Return the next 00:00 wall-clock instant in a fixed local UTC offset. */
-function nextLocalMidnight(now, offsetMinutes) {
-	const shifted = new Date(now.getTime() + offsetMinutes * 6e4);
-	const target = new Date(shifted);
-	target.setUTCHours(0, 0, 0, 0);
-	if (target.getTime() <= shifted.getTime()) target.setUTCDate(target.getUTCDate() + 1);
-	return /* @__PURE__ */ new Date(target.getTime() - offsetMinutes * 6e4);
-}
-/** Return the exact cursor window for the local calendar day ending at `midnight`. */
-function completedLocalDayWindow(midnight, offsetMinutes) {
-	const throughCursor = midnight.getTime() - 1;
-	const start = localDayStart(new Date(throughCursor), offsetMinutes).getTime();
-	return {
-		afterCursor: Math.max(0, start - 1),
-		throughCursor
-	};
-}
 //#endregion
 //#region lib/types/model.js
 /** Prompt framing and one-shot LLM adapter for living-memory maintenance. */
@@ -377,7 +374,7 @@ function buildMemoryModelRequest(input) {
 	return {
 		system: SYSTEM,
 		input: [
-			input.kind === "user" ? "Maintain the user-explicit memory document. The explicit selection authorizes one careful update; do not paste it verbatim unless exact wording is itself durable." : "Maintain the AI-inferred memory document from new conversations. Reconsider every existing entry against the newest evidence; this is not a daily append-only summary.",
+			input.kind === "user" ? "Maintain the user-explicit memory document. The explicit selection authorizes one careful update; do not paste it verbatim unless exact wording is itself durable." : "Maintain the AI-inferred memory document from new conversations. Reconsider every existing entry against the newest evidence; this is not an append-only digest.",
 			"Return one JSON object using the required schema.",
 			JSON.stringify({
 				documentKind: input.kind,
@@ -449,7 +446,7 @@ async function generateMemoryWithLlm(ctx, request, options = {}) {
 //#endregion
 //#region lib/types/maintenance.js
 /** Conversation scanning and transactional living-document maintenance. */
-/** Split a full daily scan into model-sized batches without dropping conversations. */
+/** Split one cursor window's conversation evidence into model-sized batches without dropping conversations. */
 function batchConversationEvidence(evidence, maxCharacters = 12e4) {
 	if (!Number.isSafeInteger(maxCharacters) || maxCharacters <= 0) throw new Error("maxCharacters must be positive");
 	const batches = [];
@@ -521,13 +518,180 @@ async function maintainMemoryDocument(request) {
 		changed: false,
 		revision: current.revision
 	};
-	const reason = request.kind === "user" ? "selection-memory" : "daily-maintenance";
+	const reason = request.kind === "user" ? "selection-memory" : "auto-maintenance";
 	const saved = await request.store.write(request.kind, result.document, current.revision, reason);
 	return {
 		summary: result.summary,
 		changed: true,
 		revision: saved.revision
 	};
+}
+//#endregion
+//#region lib/types/scheduler.js
+/** Quiet-period, cursor-incremental upkeep of the AI memory document. */
+/**
+* Maintains `ai.md` from recorded conversations using one monotonic time cursor
+* instead of a wall-clock schedule. Triggers are conversation silence (any session
+* event restarts the quiet timer), a startup backfill over everything missed while
+* DSH was not running, and an explicit user request. Passes run serially; extra
+* triggers while one pass runs coalesce into exactly one follow-up pass.
+*
+* Scheduled passes only curate events older than `idleDelayMs`, so evidence enters
+* memory strictly after its conversation went quiet; explicit passes include up to
+* the current instant. The cursor advances — and any persisted failure note clears —
+* only after every model batch of the window commits, so a failed window retries in
+* full on the next trigger without dropping evidence.
+*
+* @param ctx - Host context supplying the session query, logger, and LLM route.
+* @param store - The memory slice this scheduler reads documents and state from.
+* @param config - Quiet-span timing for scheduled passes.
+* @param generate - Model adapter; defaults to the product flash route.
+*/
+var IdleMemoryScheduler = class {
+	timer;
+	cycle;
+	queued = false;
+	stopped = false;
+	ctx;
+	store;
+	config;
+	generate;
+	constructor(ctx, store, config, generate) {
+		this.ctx = ctx;
+		this.store = store;
+		this.config = config;
+		this.generate = generate ?? ((input) => generateMemoryWithLlm(ctx, input.request));
+	}
+	/** Subscribe to the session event bus so any activity defers the quiet deadline.
+	*
+	* @returns The listener disposer for effect registration.
+	*/
+	listen() {
+		return this.ctx.on("session/event", () => {
+			this.armQuietTimer();
+		});
+	}
+	/** Backfill everything missed while DSH was not running, then keep idle-watching.
+	*
+	* @returns The scheduler disposer, which stops accepting triggers and clears the timer.
+	*/
+	start() {
+		this.requestCycle();
+		return () => {
+			this.stopped = true;
+			if (this.timer !== void 0) clearTimeout(this.timer);
+			this.timer = void 0;
+		};
+	}
+	/** Run one immediate pass through the current instant; report `busy` if one is active.
+	*
+	* @returns The pass outcome, or the `busy` outcome when a pass already runs.
+	*/
+	organizeNow() {
+		if (this.stopped || this.cycle !== void 0) return Promise.resolve({ status: "busy" });
+		const cycle = this.runPass("explicit");
+		this.cycle = cycle.finally(() => {
+			this.cycle = void 0;
+		});
+		return cycle;
+	}
+	requestCycle() {
+		if (this.stopped) return;
+		if (this.cycle !== void 0) {
+			this.queued = true;
+			return;
+		}
+		const cycle = this.runPass("scheduled");
+		this.cycle = cycle.finally(() => {
+			this.cycle = void 0;
+			if (this.queued && !this.stopped) {
+				this.queued = false;
+				this.requestCycle();
+			}
+		});
+	}
+	armQuietTimer() {
+		if (this.stopped) return;
+		if (this.timer !== void 0) clearTimeout(this.timer);
+		this.timer = setTimeout(() => {
+			this.timer = void 0;
+			this.requestCycle();
+		}, this.config.idleDelayMs);
+	}
+	async runPass(mode) {
+		let state;
+		try {
+			state = await this.store.readState();
+		} catch (error) {
+			this.ctx.logger.warn(`memory-system: maintenance state is unreadable: ${errorMessage(error)}`);
+			return {
+				status: "failed",
+				message: errorMessage(error)
+			};
+		}
+		try {
+			const outcome = await this.maintainWindow(state.lastMaintenanceCursor, mode);
+			await this.store.writeState({
+				lastMaintenanceCursor: outcome.throughCursor,
+				lastMaintenanceAt: (/* @__PURE__ */ new Date()).toISOString(),
+				lastProvider: PLUGIN_AI_ROUTE.provider,
+				lastModel: PLUGIN_AI_ROUTE.model
+			});
+			return outcome.result;
+		} catch (error) {
+			await this.store.writeState({
+				...state,
+				lastMaintenanceError: {
+					at: (/* @__PURE__ */ new Date()).toISOString(),
+					message: errorMessage(error)
+				}
+			}).catch(() => void 0);
+			this.ctx.logger.warn(`memory-system: ai-memory maintenance failed: ${errorMessage(error)}`);
+			return {
+				status: "failed",
+				message: errorMessage(error)
+			};
+		}
+	}
+	async maintainWindow(fromCursor, mode) {
+		const horizon = mode === "explicit" ? Date.now() - 1 : Date.now() - this.config.idleDelayMs - 1;
+		const throughCursor = Math.max(fromCursor, horizon);
+		if (throughCursor <= fromCursor) return {
+			result: { status: "empty" },
+			throughCursor: fromCursor
+		};
+		const conversations = await collectConversationChanges(this.ctx.sessionQuery, fromCursor, throughCursor);
+		let result = { status: "empty" };
+		for (const batch of batchConversationEvidence(conversations)) {
+			const maintained = await maintainMemoryDocument({
+				store: this.store,
+				kind: "ai",
+				source: {
+					conversations: batch,
+					fromCursor,
+					throughCursor
+				},
+				route: PLUGIN_AI_ROUTE,
+				generate: (args) => this.generate({
+					request: args.request,
+					route: args.route
+				})
+			});
+			result = {
+				status: "completed",
+				changed: maintained.changed,
+				summary: maintained.summary,
+				revision: maintained.revision
+			};
+		}
+		return {
+			result,
+			throughCursor
+		};
+	}
+};
+function errorMessage(error) {
+	return error instanceof Error ? error.message : String(error);
 }
 //#endregion
 //#region lib/types/recall.js
@@ -571,89 +735,19 @@ const inject = [
 	"sessionQuery",
 	"agents"
 ];
-const MAX_TIMER_DELAY_MS = 2147483647;
-const MIDNIGHT_TIMER_GRACE_MS = 6e4;
+/** Runtime schema for {@link Config}. */
+const Config = z.object({ idleDelayMs: z.number().min(6e4).max(36e5).default(3e5) });
 function directText(messages) {
 	return messages.filter((message) => message.source.kind === "user").flatMap((message) => message.content).filter((block) => block.type === "text").map((block) => block.text).join("\n").trim();
 }
-var DailyMemoryRuntime = class {
-	ctx;
-	store;
-	timer;
-	latestRoute = PLUGIN_AI_ROUTE;
-	running;
-	stopped = false;
-	constructor(ctx, store) {
-		this.ctx = ctx;
-		this.store = store;
-	}
-	start() {
-		this.armNextMidnight();
-		return () => {
-			this.stopped = true;
-			if (this.timer !== void 0) clearTimeout(this.timer);
-			this.timer = void 0;
-		};
-	}
-	requestScheduled(midnight) {
-		if (this.stopped || this.running !== void 0) return;
-		const run = this.runScheduled(midnight);
-		this.running = run;
-		run.finally(() => {
-			if (this.running === run) this.running = void 0;
-		});
-	}
-	armNextMidnight() {
-		if (this.stopped) return;
-		if (this.timer !== void 0) clearTimeout(this.timer);
-		const now = /* @__PURE__ */ new Date();
-		const midnight = nextLocalMidnight(now, -now.getTimezoneOffset());
-		const delay = Math.min(MAX_TIMER_DELAY_MS, Math.max(1, midnight.getTime() - now.getTime()));
-		this.timer = setTimeout(() => {
-			this.timer = void 0;
-			const lateness = Date.now() - midnight.getTime();
-			if (lateness >= 0 && lateness < MIDNIGHT_TIMER_GRACE_MS) this.requestScheduled(midnight);
-			this.armNextMidnight();
-		}, delay);
-	}
-	async runScheduled(midnight) {
-		try {
-			const route = this.latestRoute;
-			const { afterCursor: fromCursor, throughCursor } = completedLocalDayWindow(midnight, -midnight.getTimezoneOffset());
-			const conversations = await collectConversationChanges(this.ctx.sessionQuery, fromCursor, throughCursor);
-			for (const batch of batchConversationEvidence(conversations)) await maintainMemoryDocument({
-				store: this.store,
-				kind: "ai",
-				source: {
-					conversations: batch,
-					fromCursor,
-					throughCursor
-				},
-				route,
-				generate: (args) => generateMemoryWithLlm(this.ctx, args.request, {
-					...args.sessionId === void 0 ? {} : { sessionId: args.sessionId },
-					...args.signal === void 0 ? {} : { signal: args.signal }
-				})
-			});
-			const state = await this.store.readState();
-			await this.store.writeState({
-				...state,
-				lastDailyCursor: throughCursor,
-				lastMaintenanceAt: (/* @__PURE__ */ new Date()).toISOString(),
-				lastProvider: route.provider,
-				lastModel: route.model
-			});
-		} catch (error) {
-			this.ctx.logger.warn(`memory-system: daily maintenance failed: ${error instanceof Error ? error.message : String(error)}`);
-		}
-	}
-};
 var NativeMemoryService = class {
 	ctx;
 	store;
-	constructor(ctx, store) {
+	scheduler;
+	constructor(ctx, store, scheduler) {
 		this.ctx = ctx;
 		this.store = store;
+		this.scheduler = scheduler;
 	}
 	async documents() {
 		const [user, ai, state] = await Promise.all([
@@ -672,6 +766,9 @@ var NativeMemoryService = class {
 	}
 	restore(kind, revision) {
 		return this.store.restorePrevious(kind, revision);
+	}
+	maintain() {
+		return this.scheduler.organizeNow();
 	}
 	async remember(source, signal) {
 		const agent = this.ctx.agents.get(SessionId(source.sessionId));
@@ -703,11 +800,11 @@ var NativeMemoryService = class {
 		return result;
 	}
 };
-/** Mount API, daily upkeep, route capture, and relevance-gated pre-step recall. */
-function apply(ctx) {
+/** Mount API, quiet-period upkeep, route capture, and relevance-gated pre-step recall. */
+function apply(ctx, config) {
 	const store = new MemoryDocumentStore(resolveDshHome());
-	const daily = new DailyMemoryRuntime(ctx, store);
-	const service = new NativeMemoryService(ctx, store);
+	const scheduler = new IdleMemoryScheduler(ctx, store, { idleDelayMs: config.idleDelayMs });
+	const service = new NativeMemoryService(ctx, store, scheduler);
 	ctx.effect(() => ctx.webServer.register({
 		kind: "prefix",
 		path: MEMORY_API_ROUTE,
@@ -715,7 +812,8 @@ function apply(ctx) {
 			memoryApiHandler(req, res, service);
 		}
 	}), "memory-system: loopback document and selection API");
-	ctx.effect(() => daily.start(), "memory-system: local-midnight maintenance");
+	ctx.effect(() => scheduler.listen(), "memory-system: session activity quiets the upkeep timer");
+	ctx.effect(() => scheduler.start(), "memory-system: startup backfill and quiet-period ai-memory upkeep");
 	ctx.on("agent/pre-step", async ({ agent, messages, step, signal }, next) => {
 		const decision = await next();
 		if (decision.kind === "reject" || signal.aborted || step !== 1) return decision;
@@ -737,4 +835,4 @@ function apply(ctx) {
 	}, { prepend: true });
 }
 //#endregion
-export { MEMORY_API_ROUTE, MemoryDocumentStore, apply, inject, name };
+export { Config, MEMORY_API_ROUTE, MemoryDocumentStore, apply, inject, name };

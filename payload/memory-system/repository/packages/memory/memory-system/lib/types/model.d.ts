@@ -11,12 +11,12 @@ export interface ConversationMemoryEvidence {
     readonly role: 'user' | 'assistant';
     readonly text: string;
 }
-export interface DailyMemorySource {
+export interface ConversationWindowSource {
     readonly conversations: readonly ConversationMemoryEvidence[];
     readonly fromCursor?: number;
     readonly throughCursor?: number;
 }
-export type MemoryModelSource = SelectionMemorySource | DailyMemorySource;
+export type MemoryModelSource = SelectionMemorySource | ConversationWindowSource;
 export interface MemoryModelRequest {
     readonly system: string;
     readonly input: string;

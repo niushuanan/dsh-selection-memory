@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "kind": "xiaozhuang-dsh-plugin-export",
-  "createdAt": "2026-08-26T11:46:44.320Z",
-  "sourceCommit": "49b1c5207b1556515752c6bf9e7902c1a5964ad9",
+  "createdAt": "2026-08-26T18:54:20.398Z",
+  "sourceCommit": "30f0515497fcf88afec9a3cae96bd3b540a5da47",
   "plugins": [
     {
       "id": "selection-actions",
@@ -40,33 +40,33 @@
   "files": [
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/README.md",
-      "size": 4817,
-      "sha256": "c68ccd3fa31baefd62227f7de9b8f23a6cbd0441b03fb597e142f6328c6128ac"
+      "size": 5181,
+      "sha256": "7d3b5e8f5e9c9c5cf26d9970b8f7e9941a58f4ef021ae8d3ef8169aefad77409"
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/README.zh.md",
-      "size": 4198,
-      "sha256": "b6c90a736d1a5e47d9bf99dac576fba7003d724aa502115ba70094b878473d48"
+      "size": 4489,
+      "sha256": "8064052af93ddfddb81f1ba503f437fb7be7c460dc411813b9d1c372450dd3d1"
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/lib/client.js",
-      "size": 15170,
-      "sha256": "dfd8d451326aafd49017a4d456fda8ff83c8cf20dc26ebb1d4773ed849fb36a4"
+      "size": 18111,
+      "sha256": "c13b4552f66f5c8e6e1435c67034861c72538d9c0dadcbfa956cdb9b657400a1"
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/lib/index.js",
-      "size": 28750,
-      "sha256": "928ca6ba379494b78b3d3076601d5c35e56e76ffff75c53a058e39d3298c2570"
+      "size": 31609,
+      "sha256": "532b897c0eda2688b43a7a16de0789024f8ad9afb4261d19243048cde0a69145"
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/lib/invariant.js",
-      "size": 490,
-      "sha256": "b109d75a83b58ced56c3a4db7bb60f209bb351c4503df67049e54b842ac3a79e"
+      "size": 527,
+      "sha256": "c28a3c03980b98e05021d718bfc2a1dffb54e91512bfa2600169ccc9d4c0130b"
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/lib/types/api.d.ts",
-      "size": 1114,
-      "sha256": "f6f846e07a16e17261268e91d3a6ca0caa3ee4be909eb324952fec2f82e5116d"
+      "size": 1244,
+      "sha256": "a58b53f0cf093b6b24fab1690be6605f7b8c7845eb7a36f0420719b19445274f"
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/lib/types/client/MemorySettings.d.ts",
@@ -75,28 +75,28 @@
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/lib/types/client/api.d.ts",
-      "size": 1055,
-      "sha256": "065ef55b308da3e2f9e1fc2cffc0ef543cf100b60f48be319575242cbeb2ad63"
+      "size": 1302,
+      "sha256": "2a03b4c62d8b6b320d2d79c3cc45039d163ef94f185488472e009af919544229"
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/lib/types/client/index.d.ts",
-      "size": 695,
-      "sha256": "77ebca8c4f0dfb7088af91a42125492b5a4b79b2f1a548242bfd767b53869873"
+      "size": 713,
+      "sha256": "b28f18b6e306656641361495eb53ef5c73a14bbe88b0fd8dbdab64d3578ff6f5"
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/lib/types/client/locales.d.ts",
-      "size": 824,
-      "sha256": "46755cada0afdd3996580d70c359a3996fa77ea0263d957b82257c6efbbefdd8"
+      "size": 1222,
+      "sha256": "f9343eeb1515acffaa8f7b3295b013f136f56a612f31a48c8141a3145cdc9ac1"
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/lib/types/domain.d.ts",
-      "size": 1223,
-      "sha256": "a241f285161c52d7ba56a21e8113c0b5c9d6151b0dbde47ae58e7296d7bcd196"
+      "size": 678,
+      "sha256": "8454385718cfc9a0e1a220f9dcae456048788ab1f6a2d3722ae2632ac78dfaff"
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/lib/types/index.d.ts",
-      "size": 469,
-      "sha256": "b6d562bbd24111e71db6e2d1468d3bd9cbe2fa3d9dea95a10a8e0d9610260dab"
+      "size": 854,
+      "sha256": "e6ba9356906c269ad09db74a2a8e27f1019db6939ae72fc4166874b91796a940"
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/lib/types/invariant.d.ts",
@@ -105,18 +105,23 @@
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/lib/types/maintenance.d.ts",
-      "size": 1922,
-      "sha256": "a80d564adb1f460e3c272db69fa43d95974f5a9a59f2dd1e2f48942b6e889236"
+      "size": 1946,
+      "sha256": "c406649534c2505ab70c047f301d20c2a3518b19bdf2f0e3824bd2dafd349ea2"
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/lib/types/model.d.ts",
-      "size": 2020,
-      "sha256": "74572a3b654ca6444ab9f18381f6fcf71e560a75bc8a8e3a0e136eaabf99104f"
+      "size": 2034,
+      "sha256": "911f14b6c2ff0caf24e33691a876ead03a8d912d7d5efd5537ed569692e68b15"
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/lib/types/recall.d.ts",
       "size": 391,
       "sha256": "64ec0d9773c8be36189532f32a4908c5b80381e66ea252ccbf9f3537b3bf0bd4"
+    },
+    {
+      "path": "payload/memory-system/repository/packages/memory/memory-system/lib/types/scheduler.d.ts",
+      "size": 3231,
+      "sha256": "829d151091c86a56af2c2d86d64a122ef3e766b4052ba3733c6989f8e6439a82"
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/lib/types/store.d.ts",
@@ -125,18 +130,18 @@
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/lib/types/types.d.ts",
-      "size": 999,
-      "sha256": "820131631a323839b0bcac1229ebd71d8f1cfc1bbe2dbe32e0c7eba94e48959c"
+      "size": 1717,
+      "sha256": "337932105ff4e4c01496a880c35f50b810512966dca5d42fa4ae11636dadd05c"
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/package.json",
-      "size": 2838,
-      "sha256": "042c3ef18ad1f49282dec0573c037ac58f1ff8b4f5a69a38ba2667b7c3115f79"
+      "size": 2932,
+      "sha256": "ae4db170222dd536a1a8680584ce7feaa62a9af452279ecbc7a270040415509a"
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/src/api.ts",
-      "size": 6525,
-      "sha256": "9b97a3ba40784fa54cb533f1cfb4ac04438dcc1ad45b95bd6db7700ae64918f4"
+      "size": 6779,
+      "sha256": "f0ff6a63f8f6a680d64b744e2661b7784dd294f217315710cb8a6453d7202c6f"
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/src/client/MemorySettings.module.css",
@@ -145,23 +150,23 @@
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/src/client/MemorySettings.tsx",
-      "size": 7270,
-      "sha256": "1f25b43be4a217511ee95e6bca90bfa49afc947c3778b2406098dfb1e180bed0"
+      "size": 9043,
+      "sha256": "97b74e4b5dc1c556fa2a1a8d7d1c99a080a37b074ef0a69f6afeb487b4efbbb7"
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/src/client/api.ts",
-      "size": 2018,
-      "sha256": "82737e43bfa6f371b69085c59102bf9510d8a883b9d6ed08f09a454018298664"
+      "size": 2417,
+      "sha256": "839c0d54a935f72d96fc4fd53adc19074a1e7e6554d8a4b17a8e2d53c024e6bd"
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/src/client/index.ts",
-      "size": 1142,
-      "sha256": "8c8b44813af90b76dfa034c2eab24c548735cbd2552b43e472e05219354a1bf9"
+      "size": 1160,
+      "sha256": "df9acd76d2110969ed5002b51fc223af393b6f04bb37846e87e52b1886990256"
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/src/client/locales.ts",
-      "size": 1047,
-      "sha256": "ec6470665e2e1e55e9750a5b17dc3015dc5fcf0cbf14f4e43f31a78ecc37244d"
+      "size": 1700,
+      "sha256": "55c1ce02a4c866691d09215ed548fad3fe4fe8b980a912deb8e7ff75b26c692f"
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/src/css-modules.d.ts",
@@ -170,28 +175,28 @@
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/src/domain.ts",
-      "size": 4914,
-      "sha256": "4ca208e38386cb6bc23cb53899c5d082f6be44776863f9ab24459948419fba4c"
+      "size": 3745,
+      "sha256": "d0b79f1bcbc1cf974e536ff7ee8d29c2a2d2602f376d050b8cffdc37f4730254"
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/src/index.ts",
-      "size": 7527,
-      "sha256": "33ece9dfc470bfb2fe82f71182ee62cacd51c8aef650b4c240abcbe268adafe7"
+      "size": 5445,
+      "sha256": "c111a3c5267a600f674701c1697c121e6dfa748b9cfe297547d39d02f9ae50e8"
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/src/invariant.ts",
-      "size": 606,
-      "sha256": "af6c36e9112355f621c555648b75739cdd158e2fcd7bf856b7df1c8f5ad9d879"
+      "size": 643,
+      "sha256": "c65052f24316441567d6bad7cdef22f5a306dac26cadf02ac3d4d5cd6ab8935a"
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/src/maintenance.ts",
-      "size": 4341,
-      "sha256": "7d1f19accc0bcfd812d838f85da24c300de3cc2bf22277867c27f6d384390aa5"
+      "size": 4364,
+      "sha256": "e5554f04da4583ed13ecfed789e28fba6cc65550b9536586cd95739ec2431e44"
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/src/model.ts",
-      "size": 5949,
-      "sha256": "d43060b578a38835ef1d43c84ea4c158bb55d6ec930c83715ad25b58a26e3652"
+      "size": 5957,
+      "sha256": "9d25b253ab8d243965f8ddef084a69a3369030a3b32892ba581db107e174fe40"
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/src/recall.ts",
@@ -200,13 +205,13 @@
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/src/store.ts",
-      "size": 6198,
-      "sha256": "6d6b9e7924138e202750f30c43d79b5877bf4f49f9ed3f7dcffe1d50861a1e26"
+      "size": 6915,
+      "sha256": "e3faec6dd00de7207353ceb4be42fc591a11d9c6a97c6337d3ef0fe89cb44ac2"
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/src/types.ts",
-      "size": 908,
-      "sha256": "5c1d30c76ca9b35733119ba1c3948c2a253baa430e1aaecba37039ec656373eb"
+      "size": 1599,
+      "sha256": "bd51d4a2c38e5408da1d2c664cb49208110cdacf1dee146bfac7e49291818ea7"
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/tsconfig.client.json",
@@ -215,8 +220,8 @@
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/tsconfig.host.json",
-      "size": 769,
-      "sha256": "8f0382e5d90abdefbf408e052aeba2286be8dcf08de617f0643bc0d14388e6f9"
+      "size": 836,
+      "sha256": "7280f1997a16e4f3ca38408f2027e8f5ebfe85c54b74854749b7a92870052272"
     },
     {
       "path": "payload/memory-system/repository/packages/memory/memory-system/tsconfig.json",

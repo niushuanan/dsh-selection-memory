@@ -15,6 +15,13 @@ export declare const zh: {
     readonly retry: "重试";
     readonly empty: "暂无记忆。";
     readonly updatedAt: "更新于 {time}";
+    readonly organize: "立即整理";
+    readonly organizing: "正在整理…";
+    readonly organized: "AI 记忆已更新";
+    readonly organizedUnchanged: "暂无需要沉淀的新内容";
+    readonly organizeBusy: "已有一次整理在进行，请稍后";
+    readonly organizeFailed: "整理失败：{message}";
+    readonly lastFailed: "上次自动整理失败于 {time}：{message}";
 };
 export declare const en: Record<keyof typeof zh, string>;
 export type MemoryLocaleKey = keyof typeof zh;

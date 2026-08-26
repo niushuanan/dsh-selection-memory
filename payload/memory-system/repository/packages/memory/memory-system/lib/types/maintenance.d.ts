@@ -4,7 +4,7 @@ import type { SessionQueryEngine } from '@deepseek-ai/dsh-session-query';
 import { buildMemoryModelRequest, type ConversationMemoryEvidence, type MemoryModelResult, type MemoryModelSource, type MemoryRoute } from './model.ts';
 import type { MemoryDocumentKind, MemoryDocumentStore } from './store.ts';
 type MemoryQuery = Pick<SessionQueryEngine, 'listSessions' | 'filterEvents'>;
-/** Split a full daily scan into model-sized batches without dropping conversations. */
+/** Split one cursor window's conversation evidence into model-sized batches without dropping conversations. */
 export declare function batchConversationEvidence(evidence: readonly ConversationMemoryEvidence[], maxCharacters?: number): ConversationMemoryEvidence[][];
 /** Read only current user/assistant semantic events in the exact successful-cursor window. */
 export declare function collectConversationChanges(sessionQuery: MemoryQuery, afterCursor: number, throughCursor: number, signal?: AbortSignal): Promise<ConversationMemoryEvidence[]>;

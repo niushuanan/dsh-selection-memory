@@ -4,10 +4,9 @@ window.__ModuleLoader__.load({
 		var module = { exports: {} };
 		var exports = module.exports;
 		Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
-		let react_jsx_runtime = require("react/jsx-runtime");
 		let react = require("react");
-		//#region lib/types/client/api.js
-		/** Browser transport for the fixed global memory documents and selection action. */
+		let react_jsx_runtime = require("react/jsx-runtime");
+		//#region src/client/api.ts
 		const API = "/plugins/memory-system/api";
 		var MemoryRequestError = class extends Error {
 			status;
@@ -48,9 +47,20 @@ window.__ModuleLoader__.load({
 				body: JSON.stringify(source)
 			}));
 		}
+		/** Ask the Host for one immediate AI-memory pass that includes brand-new messages.
+		*
+		* @returns The pass outcome as the Host scheduler reports it.
+		*/
+		async function organizeAiMemory() {
+			return jsonResponse(await fetch(`${API}/maintain`, {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: "{}"
+			}));
+		}
 		//#endregion
-		//#region \0dsh-css:dsh-source/packages/memory/memory-system/src/client/MemorySettings.module.css.mjs
-		const css = ".ONlAza_root{box-sizing:border-box;width:100%;max-width:760px;color:var(--dsw-alias-label-primary);padding-bottom:28px}.ONlAza_header h2{margin:0;font-size:18px;font-weight:600;line-height:26px}.ONlAza_tabs{border-bottom:1px solid var(--dsw-alias-border-l2);align-items:flex-end;gap:22px;margin-top:14px;display:flex}.ONlAza_tab{color:var(--dsw-alias-label-tertiary);font:inherit;cursor:pointer;background:0 0;border:0;padding:7px 1px 9px;font-size:13px;line-height:20px;position:relative}.ONlAza_tab:hover,.ONlAza_tab[data-active=true]{color:var(--dsw-alias-label-primary)}.ONlAza_tab[data-active=true]:after,.ONlAza_tab:focus-visible:after{background:var(--dsw-alias-label-primary);content:\"\";border-radius:2px 2px 0 0;height:2px;position:absolute;bottom:-1px;left:0;right:0}.ONlAza_tab:focus-visible{outline:2px solid var(--dsw-alias-state-business-primary);outline-offset:2px;border-radius:2px}.ONlAza_editorPanel{margin-top:14px}.ONlAza_editor{box-sizing:border-box;resize:vertical;border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-bg-layer-1);width:100%;min-height:360px;color:var(--dsw-alias-label-primary);border-radius:12px;outline:none;padding:14px 16px;font:12px/1.65 ui-monospace,SFMono-Regular,Menlo,monospace;display:block}.ONlAza_editor:focus{border-color:var(--dsw-alias-label-secondary);box-shadow:0 0 0 2px color-mix(in srgb,var(--dsw-alias-label-primary) 7%,transparent)}.ONlAza_footer{justify-content:space-between;align-items:flex-start;gap:16px;margin-top:12px;display:flex}.ONlAza_meta{min-width:0;color:var(--dsw-alias-label-tertiary);flex-direction:column;gap:2px;font-size:10px;line-height:16px;display:flex}.ONlAza_actions{flex:none;gap:8px;display:flex}.ONlAza_primary,.ONlAza_secondary{height:32px;font:inherit;cursor:pointer;border-radius:8px;padding:0 14px;font-size:12px}.ONlAza_primary{background:var(--dsw-alias-label-primary);color:var(--dsw-alias-bg-layer-1);border:0}.ONlAza_secondary{border:1px solid var(--dsw-alias-border-l1);color:var(--dsw-alias-label-secondary);background:0 0}.ONlAza_primary:disabled,.ONlAza_secondary:disabled{cursor:default;opacity:.45}.ONlAza_notice{color:var(--dsw-alias-label-secondary);font-size:12px}.ONlAza_success{color:var(--dsw-alias-green-primary,#15803d)}.ONlAza_error{color:var(--dsw-alias-red-primary,#d92d20);font-size:11px}@media (width<=620px){.ONlAza_footer{flex-direction:column}.ONlAza_actions{align-self:flex-end}}";
+		//#region \0dsh-css:/Users/zhuanghongkai/Desktop/迭代DSH/xiaozhuang-dsh/packages/memory/memory-system/src/client/MemorySettings.module.css.mjs
+		const css = ".jsAB-G_root{box-sizing:border-box;width:100%;max-width:760px;color:var(--dsw-alias-label-primary);padding-bottom:28px}.jsAB-G_header h2{margin:0;font-size:18px;font-weight:600;line-height:26px}.jsAB-G_tabs{border-bottom:1px solid var(--dsw-alias-border-l2);align-items:flex-end;gap:22px;margin-top:14px;display:flex}.jsAB-G_tab{color:var(--dsw-alias-label-tertiary);font:inherit;cursor:pointer;background:0 0;border:0;padding:7px 1px 9px;font-size:13px;line-height:20px;position:relative}.jsAB-G_tab:hover,.jsAB-G_tab[data-active=true]{color:var(--dsw-alias-label-primary)}.jsAB-G_tab[data-active=true]:after,.jsAB-G_tab:focus-visible:after{background:var(--dsw-alias-label-primary);content:\"\";border-radius:2px 2px 0 0;height:2px;position:absolute;bottom:-1px;left:0;right:0}.jsAB-G_tab:focus-visible{outline:2px solid var(--dsw-alias-state-business-primary);outline-offset:2px;border-radius:2px}.jsAB-G_editorPanel{margin-top:14px}.jsAB-G_editor{box-sizing:border-box;resize:vertical;border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-bg-layer-1);width:100%;min-height:360px;color:var(--dsw-alias-label-primary);border-radius:12px;outline:none;padding:14px 16px;font:12px/1.65 ui-monospace,SFMono-Regular,Menlo,monospace;display:block}.jsAB-G_editor:focus{border-color:var(--dsw-alias-label-secondary);box-shadow:0 0 0 2px color-mix(in srgb,var(--dsw-alias-label-primary) 7%,transparent)}.jsAB-G_footer{justify-content:space-between;align-items:flex-start;gap:16px;margin-top:12px;display:flex}.jsAB-G_meta{min-width:0;color:var(--dsw-alias-label-tertiary);flex-direction:column;gap:2px;font-size:10px;line-height:16px;display:flex}.jsAB-G_actions{flex:none;gap:8px;display:flex}.jsAB-G_primary,.jsAB-G_secondary{height:32px;font:inherit;cursor:pointer;border-radius:8px;padding:0 14px;font-size:12px}.jsAB-G_primary{background:var(--dsw-alias-label-primary);color:var(--dsw-alias-bg-layer-1);border:0}.jsAB-G_secondary{border:1px solid var(--dsw-alias-border-l1);color:var(--dsw-alias-label-secondary);background:0 0}.jsAB-G_primary:disabled,.jsAB-G_secondary:disabled{cursor:default;opacity:.45}.jsAB-G_notice{color:var(--dsw-alias-label-secondary);font-size:12px}.jsAB-G_success{color:var(--dsw-alias-green-primary,#15803d)}.jsAB-G_error{color:var(--dsw-alias-red-primary,#d92d20);font-size:11px}@media (width<=620px){.jsAB-G_footer{flex-direction:column}.jsAB-G_actions{align-self:flex-end}}";
 		const tagId = "@deepseek-ai/dsh-memory-system/MemorySettings.module.css";
 		if (typeof document !== "undefined" && document.querySelector("style[data-plugin-css=" + JSON.stringify(tagId) + "]") === null) {
 			const tag = document.createElement("style");
@@ -60,23 +70,23 @@ window.__ModuleLoader__.load({
 			document.head.appendChild(tag);
 		}
 		var MemorySettings_module_css_default = {
-			"actions": "ONlAza_actions",
-			"editor": "ONlAza_editor",
-			"editorPanel": "ONlAza_editorPanel",
-			"error": "ONlAza_error",
-			"footer": "ONlAza_footer",
-			"header": "ONlAza_header",
-			"meta": "ONlAza_meta",
-			"notice": "ONlAza_notice",
-			"primary": "ONlAza_primary",
-			"root": "ONlAza_root",
-			"secondary": "ONlAza_secondary",
-			"success": "ONlAza_success",
-			"tab": "ONlAza_tab",
-			"tabs": "ONlAza_tabs"
+			"actions": "jsAB-G_actions",
+			"editor": "jsAB-G_editor",
+			"editorPanel": "jsAB-G_editorPanel",
+			"error": "jsAB-G_error",
+			"footer": "jsAB-G_footer",
+			"header": "jsAB-G_header",
+			"meta": "jsAB-G_meta",
+			"notice": "jsAB-G_notice",
+			"primary": "jsAB-G_primary",
+			"root": "jsAB-G_root",
+			"secondary": "jsAB-G_secondary",
+			"success": "jsAB-G_success",
+			"tab": "jsAB-G_tab",
+			"tabs": "jsAB-G_tabs"
 		};
 		//#endregion
-		//#region lib/types/client/MemorySettings.js
+		//#region src/client/MemorySettings.tsx
 		function displayTime(value) {
 			if (value === void 0) return void 0;
 			const date = new Date(value);
@@ -161,19 +171,47 @@ window.__ModuleLoader__.load({
 					setBusy(void 0);
 				}
 			};
+			const organize = async () => {
+				if (snapshot === void 0 || busy !== void 0) return;
+				setBusy("organize");
+				setError("");
+				setStatus("");
+				try {
+					const outcome = await organizeAiMemory();
+					switch (outcome.status) {
+						case "completed":
+							setStatus(outcome.changed === true ? t("organized") : t("organizedUnchanged"));
+							if (!dirty) await load();
+							break;
+						case "empty":
+							setStatus(t("organizedUnchanged"));
+							break;
+						case "busy":
+							setStatus(t("organizeBusy"));
+							break;
+						case "failed":
+							setError(t("organizeFailed", { message: outcome.message ?? "" }));
+							break;
+					}
+				} catch (reason) {
+					setError(reason instanceof Error ? reason.message : String(reason));
+				} finally {
+					setBusy(void 0);
+				}
+			};
 			const updated = displayTime(active === "ai" ? snapshot?.state.lastMaintenanceAt ?? document?.updatedAt : document?.updatedAt);
-			return (0, react_jsx_runtime.jsxs)("div", {
+			return /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
 				className: MemorySettings_module_css_default.root,
 				children: [
-					(0, react_jsx_runtime.jsx)("header", {
+					/* @__PURE__ */ (0, react_jsx_runtime.jsx)("header", {
 						className: MemorySettings_module_css_default.header,
-						children: (0, react_jsx_runtime.jsx)("h2", { children: t("title") })
+						children: /* @__PURE__ */ (0, react_jsx_runtime.jsx)("h2", { children: t("title") })
 					}),
-					(0, react_jsx_runtime.jsx)("div", {
+					/* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
 						className: MemorySettings_module_css_default.tabs,
 						role: "tablist",
 						"aria-label": t("title"),
-						children: ["user", "ai"].map((kind, index, kinds) => (0, react_jsx_runtime.jsx)("button", {
+						children: ["user", "ai"].map((kind, index, kinds) => /* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
 							ref: (element) => {
 								tabRefs.current[index] = element;
 							},
@@ -216,20 +254,20 @@ window.__ModuleLoader__.load({
 							children: t(`tab.${kind}`)
 						}, kind))
 					}),
-					snapshot === void 0 && loading ? (0, react_jsx_runtime.jsx)("p", {
+					snapshot === void 0 && loading ? /* @__PURE__ */ (0, react_jsx_runtime.jsx)("p", {
 						className: MemorySettings_module_css_default.notice,
 						children: t("loading")
 					}) : null,
-					snapshot === void 0 && !loading && error !== "" ? (0, react_jsx_runtime.jsxs)("div", {
+					snapshot === void 0 && !loading && error !== "" ? /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
 						className: MemorySettings_module_css_default.notice,
 						children: [
-							(0, react_jsx_runtime.jsx)("span", {
+							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
 								className: MemorySettings_module_css_default.error,
 								role: "alert",
 								children: error
 							}),
 							" ",
-							(0, react_jsx_runtime.jsx)("button", {
+							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
 								type: "button",
 								className: MemorySettings_module_css_default.secondary,
 								onClick: () => {
@@ -239,12 +277,12 @@ window.__ModuleLoader__.load({
 							})
 						]
 					}) : null,
-					document !== void 0 ? (0, react_jsx_runtime.jsxs)("section", {
+					document !== void 0 ? /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("section", {
 						id: `${tabsId}-panel-${active}`,
 						className: MemorySettings_module_css_default.editorPanel,
 						role: "tabpanel",
 						"aria-labelledby": `${tabsId}-tab-${active}`,
-						children: [(0, react_jsx_runtime.jsx)("textarea", {
+						children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("textarea", {
 							className: MemorySettings_module_css_default.editor,
 							"aria-label": t(`editor.${active}`),
 							value: drafts[active],
@@ -258,46 +296,66 @@ window.__ModuleLoader__.load({
 								}));
 								setStatus("");
 							}
-						}), (0, react_jsx_runtime.jsxs)("div", {
+						}), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
 							className: MemorySettings_module_css_default.footer,
-							children: [(0, react_jsx_runtime.jsxs)("div", {
+							children: [/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
 								className: MemorySettings_module_css_default.meta,
 								children: [
-									updated === void 0 ? null : (0, react_jsx_runtime.jsx)("span", { children: t("updatedAt", { time: updated }) }),
-									status === "" ? null : (0, react_jsx_runtime.jsx)("span", {
+									updated === void 0 ? null : /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", { children: t("updatedAt", { time: updated }) }),
+									active !== "ai" || snapshot?.state.lastMaintenanceError === void 0 ? null : /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
+										className: MemorySettings_module_css_default.error,
+										role: "alert",
+										children: t("lastFailed", {
+											time: displayTime(snapshot.state.lastMaintenanceError.at) ?? snapshot.state.lastMaintenanceError.at,
+											message: snapshot.state.lastMaintenanceError.message
+										})
+									}),
+									status === "" ? null : /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
 										className: MemorySettings_module_css_default.success,
 										role: "status",
 										children: status
 									}),
-									error === "" ? null : (0, react_jsx_runtime.jsx)("span", {
+									error === "" ? null : /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
 										className: MemorySettings_module_css_default.error,
 										role: "alert",
 										children: error
 									})
 								]
-							}), (0, react_jsx_runtime.jsxs)("div", {
+							}), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
 								className: MemorySettings_module_css_default.actions,
-								children: [document.canRestore ? (0, react_jsx_runtime.jsx)("button", {
-									type: "button",
-									className: MemorySettings_module_css_default.secondary,
-									disabled: busy !== void 0,
-									onClick: () => {
-										restore();
-									},
-									children: busy === "restore" ? t("restoring") : t("restore")
-								}) : null, (0, react_jsx_runtime.jsx)("button", {
-									type: "button",
-									className: MemorySettings_module_css_default.primary,
-									disabled: !dirty || busy !== void 0,
-									onClick: () => {
-										save();
-									},
-									children: busy === "save" ? t("saving") : t("save")
-								})]
+								children: [
+									active === "ai" ? /* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
+										type: "button",
+										className: MemorySettings_module_css_default.secondary,
+										disabled: busy !== void 0,
+										onClick: () => {
+											organize();
+										},
+										children: busy === "organize" ? t("organizing") : t("organize")
+									}) : null,
+									document.canRestore ? /* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
+										type: "button",
+										className: MemorySettings_module_css_default.secondary,
+										disabled: busy !== void 0,
+										onClick: () => {
+											restore();
+										},
+										children: busy === "restore" ? t("restoring") : t("restore")
+									}) : null,
+									/* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
+										type: "button",
+										className: MemorySettings_module_css_default.primary,
+										disabled: !dirty || busy !== void 0,
+										onClick: () => {
+											save();
+										},
+										children: busy === "save" ? t("saving") : t("save")
+									})
+								]
 							})]
 						})]
 					}) : null,
-					snapshot !== void 0 && error !== "" ? (0, react_jsx_runtime.jsx)("p", {
+					snapshot !== void 0 && error !== "" ? /* @__PURE__ */ (0, react_jsx_runtime.jsx)("p", {
 						className: MemorySettings_module_css_default.error,
 						role: "alert",
 						children: error
@@ -306,7 +364,7 @@ window.__ModuleLoader__.load({
 			});
 		}
 		//#endregion
-		//#region lib/types/client/locales.js
+		//#region src/client/locales.ts
 		const NS = "memorySystem";
 		const zh = {
 			title: "长期记忆",
@@ -323,7 +381,14 @@ window.__ModuleLoader__.load({
 			loading: "正在读取记忆…",
 			retry: "重试",
 			empty: "暂无记忆。",
-			"updatedAt": "更新于 {time}"
+			"updatedAt": "更新于 {time}",
+			organize: "立即整理",
+			organizing: "正在整理…",
+			organized: "AI 记忆已更新",
+			organizedUnchanged: "暂无需要沉淀的新内容",
+			organizeBusy: "已有一次整理在进行，请稍后",
+			organizeFailed: "整理失败：{message}",
+			lastFailed: "上次自动整理失败于 {time}：{message}"
 		};
 		const en = {
 			title: "Long-term memory",
@@ -340,11 +405,17 @@ window.__ModuleLoader__.load({
 			loading: "Loading memory…",
 			retry: "Retry",
 			empty: "No memory yet.",
-			"updatedAt": "Updated {time}"
+			"updatedAt": "Updated {time}",
+			organize: "Organize now",
+			organizing: "Organizing…",
+			organized: "AI memory updated",
+			organizedUnchanged: "Nothing new worth remembering yet",
+			organizeBusy: "A maintenance pass is already running",
+			organizeFailed: "Maintenance failed: {message}",
+			lastFailed: "Last automatic maintenance failed at {time}: {message}"
 		};
 		//#endregion
-		//#region lib/types/client/index.js
-		/** Browser half of the native two-document memory system. */
+		//#region src/client/index.ts
 		const inject = ["slots", "locale"];
 		/** Register the global memory editor as one native Settings section. */
 		function apply(ctx) {
@@ -365,6 +436,7 @@ window.__ModuleLoader__.load({
 		exports.apply = apply;
 		exports.inject = inject;
 		exports.loadMemoryDocuments = loadMemoryDocuments;
+		exports.organizeAiMemory = organizeAiMemory;
 		exports.rememberSelection = rememberSelection;
 		exports.restoreMemoryDocument = restoreMemoryDocument;
 		exports.saveMemoryDocument = saveMemoryDocument;
