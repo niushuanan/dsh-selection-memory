@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "kind": "xiaozhuang-dsh-plugin-export",
-  "createdAt": "2026-08-26T19:23:52.779Z",
-  "sourceCommit": "a994ac03fb3fdb22e732f5ac4f4da46d1168cff7",
+  "createdAt": "2026-09-05T04:07:03.987Z",
+  "sourceCommit": "e745482d8f5e33497d9ed46a2a88681456024334",
   "plugins": [
     {
       "id": "selection-actions",
@@ -10,13 +10,13 @@
       "rows": [
         {
           "id": "ui-selection-actions",
-          "name": "@deepseek-ai/dsh-client-ui-selection-actions"
+          "name": "./lib/index.js"
         }
       ],
       "sources": [
         {
-          "kind": "repository",
-          "path": "packages/client/ui-selection-actions"
+          "kind": "product",
+          "path": "plugins/selection-actions"
         }
       ]
     },
@@ -26,377 +26,297 @@
       "rows": [
         {
           "id": "memory-system",
-          "name": "@deepseek-ai/dsh-memory-system"
+          "name": "./lib/index.js"
         }
       ],
       "sources": [
         {
-          "kind": "repository",
-          "path": "packages/memory/memory-system"
+          "kind": "product",
+          "path": "plugins/memory-system"
         }
       ]
     }
   ],
   "files": [
     {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/README.md",
-      "size": 5181,
-      "sha256": "7d3b5e8f5e9c9c5cf26d9970b8f7e9941a58f4ef021ae8d3ef8169aefad77409"
+      "path": "payload/memory-system/product/plugins/memory-system/cordis.patch.yml",
+      "size": 61,
+      "sha256": "eef0099fc08626d4227c832b64167b34675b98c0850f17507f1e63e918be9d09"
     },
     {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/README.zh.md",
-      "size": 4489,
-      "sha256": "8064052af93ddfddb81f1ba503f437fb7be7c460dc411813b9d1c372450dd3d1"
+      "path": "payload/memory-system/product/plugins/memory-system/lib/client.js",
+      "size": 18200,
+      "sha256": "947786c385c5a509276a61735e4335b3ac1a6b1e920744aa5ecd763b4c46aa23"
     },
     {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/lib/client.js",
-      "size": 18111,
-      "sha256": "c13b4552f66f5c8e6e1435c67034861c72538d9c0dadcbfa956cdb9b657400a1"
+      "path": "payload/memory-system/product/plugins/memory-system/lib/client.js.map",
+      "size": 23038,
+      "sha256": "e896d537495639622e15053253d247c41ffbb263916af6d949693a10cefb8b7d"
     },
     {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/lib/index.js",
-      "size": 31609,
-      "sha256": "532b897c0eda2688b43a7a16de0789024f8ad9afb4261d19243048cde0a69145"
+      "path": "payload/memory-system/product/plugins/memory-system/lib/index.js",
+      "size": 36953,
+      "sha256": "c5df385bd85f17fe35796797db254c729133b1249a73e856649d545c9aa237a0"
     },
     {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/lib/invariant.js",
-      "size": 527,
-      "sha256": "c28a3c03980b98e05021d718bfc2a1dffb54e91512bfa2600169ccc9d4c0130b"
+      "path": "payload/memory-system/product/plugins/memory-system/lib/invariant.js",
+      "size": 450,
+      "sha256": "7f0c58ee809a99f15c943fb6c8acc9e8efeae933ff4f3aadb5f9bb8a51905c9b"
     },
     {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/lib/types/api.d.ts",
-      "size": 1244,
-      "sha256": "a58b53f0cf093b6b24fab1690be6605f7b8c7845eb7a36f0420719b19445274f"
+      "path": "payload/memory-system/product/plugins/memory-system/package.json",
+      "size": 3015,
+      "sha256": "09c21b48af77f8ea4a477d5466c2847deda8349ff29e801fdcb2d2ddcbd7605b"
     },
     {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/lib/types/client/MemorySettings.d.ts",
-      "size": 421,
-      "sha256": "39bfa4fb63ba28d106d3bd129c3102c3a8e38c1d46d9cade16b3610c69286ca3"
+      "path": "payload/memory-system/product/plugins/memory-system/README.i18n.yaml",
+      "size": 439,
+      "sha256": "5b3c38c360a08cbc4cedde55aaad9002bc01c835c6dafc2bbc0d32d313aa82fb"
     },
     {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/lib/types/client/api.d.ts",
-      "size": 1302,
-      "sha256": "2a03b4c62d8b6b320d2d79c3cc45039d163ef94f185488472e009af919544229"
+      "path": "payload/memory-system/product/plugins/memory-system/README.md",
+      "size": 5286,
+      "sha256": "f37f37d4cd5ba0241cd7b83a6f74032f1ca86c29d84f8a4d2b4e1342dd806449"
     },
     {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/lib/types/client/index.d.ts",
-      "size": 713,
-      "sha256": "b28f18b6e306656641361495eb53ef5c73a14bbe88b0fd8dbdab64d3578ff6f5"
+      "path": "payload/memory-system/product/plugins/memory-system/README.zh.md",
+      "size": 4575,
+      "sha256": "2a0c4c0f025cb2da0c0a87776c4c1f2a18dfc389482f740ec114a6781d4b1359"
     },
     {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/lib/types/client/locales.d.ts",
-      "size": 1222,
-      "sha256": "f9343eeb1515acffaa8f7b3295b013f136f56a612f31a48c8141a3145cdc9ac1"
+      "path": "payload/memory-system/product/plugins/memory-system/src/api.ts",
+      "size": 6804,
+      "sha256": "ead4057f72cc4b6565545e286de71f800d80cea691f44829aa937424d8393914"
     },
     {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/lib/types/domain.d.ts",
-      "size": 678,
-      "sha256": "8454385718cfc9a0e1a220f9dcae456048788ab1f6a2d3722ae2632ac78dfaff"
-    },
-    {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/lib/types/index.d.ts",
-      "size": 854,
-      "sha256": "e6ba9356906c269ad09db74a2a8e27f1019db6939ae72fc4166874b91796a940"
-    },
-    {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/lib/types/invariant.d.ts",
-      "size": 323,
-      "sha256": "1138e230049f148b0fea2828afc84e4310231560f418a323d275e77b083fe34e"
-    },
-    {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/lib/types/maintenance.d.ts",
-      "size": 1946,
-      "sha256": "c406649534c2505ab70c047f301d20c2a3518b19bdf2f0e3824bd2dafd349ea2"
-    },
-    {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/lib/types/model.d.ts",
-      "size": 2034,
-      "sha256": "911f14b6c2ff0caf24e33691a876ead03a8d912d7d5efd5537ed569692e68b15"
-    },
-    {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/lib/types/recall.d.ts",
-      "size": 391,
-      "sha256": "64ec0d9773c8be36189532f32a4908c5b80381e66ea252ccbf9f3537b3bf0bd4"
-    },
-    {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/lib/types/scheduler.d.ts",
-      "size": 3231,
-      "sha256": "829d151091c86a56af2c2d86d64a122ef3e766b4052ba3733c6989f8e6439a82"
-    },
-    {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/lib/types/store.d.ts",
-      "size": 1163,
-      "sha256": "e636e87589291d2bc744e0896431a153128b0a3376dabea9ac326183ae9f94e4"
-    },
-    {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/lib/types/types.d.ts",
-      "size": 1717,
-      "sha256": "337932105ff4e4c01496a880c35f50b810512966dca5d42fa4ae11636dadd05c"
-    },
-    {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/package.json",
-      "size": 2932,
-      "sha256": "ae4db170222dd536a1a8680584ce7feaa62a9af452279ecbc7a270040415509a"
-    },
-    {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/src/api.ts",
-      "size": 6779,
-      "sha256": "f0ff6a63f8f6a680d64b744e2661b7784dd294f217315710cb8a6453d7202c6f"
-    },
-    {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/src/client/MemorySettings.module.css",
-      "size": 2529,
-      "sha256": "696a3903881b5a1ff6cb114536e246ff72c1e166e6ef81985a2597c8646c3b37"
-    },
-    {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/src/client/MemorySettings.tsx",
-      "size": 9043,
-      "sha256": "97b74e4b5dc1c556fa2a1a8d7d1c99a080a37b074ef0a69f6afeb487b4efbbb7"
-    },
-    {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/src/client/api.ts",
+      "path": "payload/memory-system/product/plugins/memory-system/src/client/api.ts",
       "size": 2417,
       "sha256": "839c0d54a935f72d96fc4fd53adc19074a1e7e6554d8a4b17a8e2d53c024e6bd"
     },
     {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/src/client/index.ts",
-      "size": 1160,
-      "sha256": "df9acd76d2110969ed5002b51fc223af393b6f04bb37846e87e52b1886990256"
+      "path": "payload/memory-system/product/plugins/memory-system/src/client/index.ts",
+      "size": 1447,
+      "sha256": "55b3d9b2066797610e607d8eccf797c59a7c068944ead9e14cd506780e37729a"
     },
     {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/src/client/locales.ts",
+      "path": "payload/memory-system/product/plugins/memory-system/src/client/locales.ts",
       "size": 1700,
       "sha256": "55c1ce02a4c866691d09215ed548fad3fe4fe8b980a912deb8e7ff75b26c692f"
     },
     {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/src/css-modules.d.ts",
+      "path": "payload/memory-system/product/plugins/memory-system/src/client/MemorySettings.module.css",
+      "size": 2449,
+      "sha256": "35ae8534bcdd7a20748ae1f8c6854f468c769f5ed69760ac9dd75d20a3d70329"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/src/client/MemorySettings.tsx",
+      "size": 9088,
+      "sha256": "2f6823486a10b3d267ac8def904317cfa74ba8cb0606accda0029df93877ee0e"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/src/css-modules.d.ts",
       "size": 109,
       "sha256": "1b119eae282e4981c7ee24bbcf0ceafe34d57f6d5e6b148b2b7cc7c09cd89513"
     },
     {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/src/domain.ts",
+      "path": "payload/memory-system/product/plugins/memory-system/src/domain.ts",
       "size": 3745,
       "sha256": "d0b79f1bcbc1cf974e536ff7ee8d29c2a2d2602f376d050b8cffdc37f4730254"
     },
     {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/src/index.ts",
+      "path": "payload/memory-system/product/plugins/memory-system/src/index.ts",
       "size": 5445,
       "sha256": "c111a3c5267a600f674701c1697c121e6dfa748b9cfe297547d39d02f9ae50e8"
     },
     {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/src/invariant.ts",
+      "path": "payload/memory-system/product/plugins/memory-system/src/invariant.ts",
       "size": 643,
       "sha256": "c65052f24316441567d6bad7cdef22f5a306dac26cadf02ac3d4d5cd6ab8935a"
     },
     {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/src/maintenance.ts",
-      "size": 4364,
-      "sha256": "e5554f04da4583ed13ecfed789e28fba6cc65550b9536586cd95739ec2431e44"
+      "path": "payload/memory-system/product/plugins/memory-system/src/maintenance.ts",
+      "size": 5726,
+      "sha256": "3730a1b5f798e77f4e70089fc7f1f0c1e2776cf247e35e795defbdf5f6095479"
     },
     {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/src/model.ts",
-      "size": 5957,
-      "sha256": "9d25b253ab8d243965f8ddef084a69a3369030a3b32892ba581db107e174fe40"
+      "path": "payload/memory-system/product/plugins/memory-system/src/model.ts",
+      "size": 10413,
+      "sha256": "31e3a7476bada634234fe9b7f250c13a3f3d6ff6fcd32c213df8a9c0ef1e13d3"
     },
     {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/src/recall.ts",
+      "path": "payload/memory-system/product/plugins/memory-system/src/recall.ts",
       "size": 1186,
       "sha256": "5423a5bcefdd27cd196d591d6f1c40f9f16f9b88e122fa8c7728b1054a843411"
     },
     {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/src/store.ts",
+      "path": "payload/memory-system/product/plugins/memory-system/src/scheduler.ts",
+      "size": 9012,
+      "sha256": "1278fd1bf899ecad849ec1d4aaf68e2fa84dc741c7d0abc589574ea7e8bf0a37"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/src/store.ts",
       "size": 6915,
       "sha256": "e3faec6dd00de7207353ceb4be42fc591a11d9c6a97c6337d3ef0fe89cb44ac2"
     },
     {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/src/types.ts",
+      "path": "payload/memory-system/product/plugins/memory-system/src/types.ts",
       "size": 1599,
       "sha256": "bd51d4a2c38e5408da1d2c664cb49208110cdacf1dee146bfac7e49291818ea7"
     },
     {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/tsconfig.client.json",
-      "size": 485,
-      "sha256": "1cd50e7144839a982f1d805da7b8d1eeaf444a5fff64068d10516fac228c6edc"
+      "path": "payload/memory-system/product/plugins/memory-system/tsconfig.client.json",
+      "size": 597,
+      "sha256": "a4e03218357df5bf51534e22adacb88f2ce3f9c57df6fc00609b17ed6cc40438"
     },
     {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/tsconfig.host.json",
-      "size": 836,
-      "sha256": "7280f1997a16e4f3ca38408f2027e8f5ebfe85c54b74854749b7a92870052272"
+      "path": "payload/memory-system/product/plugins/memory-system/tsconfig.host.json",
+      "size": 899,
+      "sha256": "d054cd95acff1eef3d5b5ccbbab28b97bc02756886602c03ae1022be43dc2978"
     },
     {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/tsconfig.json",
+      "path": "payload/memory-system/product/plugins/memory-system/tsconfig.json",
       "size": 122,
       "sha256": "9ae2773ce422b78211f4ed8c2d4f6adb6737a9d0f33c4c392b1ea01a41bec759"
     },
     {
-      "path": "payload/memory-system/repository/packages/memory/memory-system/tsdown.config.ts",
-      "size": 174,
-      "sha256": "c0212f074764e38e838280925891761735f8214be2bdde961bf5c281f93e74a8"
+      "path": "payload/memory-system/product/plugins/memory-system/tsdown.config.ts",
+      "size": 171,
+      "sha256": "4f31247ba88f56f23a5f9762732ea6c44bea2950d23dc4861352ed9b51214d09"
     },
     {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/README.md",
+      "path": "payload/selection-actions/product/plugins/selection-actions/cordis.patch.yml",
+      "size": 68,
+      "sha256": "f450e3edb01493e054180848ccb9b8c2b836c7580d471a0fa722394966070bbb"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/client.js",
+      "size": 35083,
+      "sha256": "e53b263c24b5afd63ff3c40859bc1284f37268da7bb4aa3ee2533f355f798236"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/client.js.map",
+      "size": 50347,
+      "sha256": "606d0bf41aad7d32c32362591d04e9c540d76ad4e518e4d5836ca9fb4fd3b88d"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/index.js",
+      "size": 138,
+      "sha256": "8252bc6f35659930a27f1a150bfb18acff6e761ca093ad7a5663a8037babda6d"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/invariant.js",
+      "size": 451,
+      "sha256": "64239aba91ce50d739262d4c31e5795ae771d4e84361182758725c7808e300cb"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/package.json",
+      "size": 2752,
+      "sha256": "a68cf2a70bddc6b820079dbf99f4f04ccda371a93c002811d5236596cb17518b"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/README.i18n.yaml",
+      "size": 446,
+      "sha256": "58d54cfab257cec462f45dc6e2fea050f00d2dd3fcbf44c9253dda43b20a4a05"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/README.md",
       "size": 3057,
       "sha256": "0d600605aa17d226a056278a147e976a689a0e0843514560998ad6f52fbab713"
     },
     {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/README.zh.md",
+      "path": "payload/selection-actions/product/plugins/selection-actions/README.zh.md",
       "size": 2663,
       "sha256": "e836777bd49d093cee32a13f40ff01fcb0327fda458afe1767670d0219992384"
     },
     {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/lib/client.js",
-      "size": 32966,
-      "sha256": "e273a057e44cc612a4bf841a6d6863041be51cbd14262669e0736b5a1019bb6d"
-    },
-    {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/lib/index.js",
-      "size": 144,
-      "sha256": "eb9a4e89e9605d2468ad207ef9ef46c660544ff2166a07b1e95047649895d85e"
-    },
-    {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/lib/invariant.js",
-      "size": 457,
-      "sha256": "8370cbddef636158c38c0942b7246544c8344958ed3202bc28c65e5fdf4aef30"
-    },
-    {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/lib/types/client/SelectionActions.d.ts",
-      "size": 1024,
-      "sha256": "b73de189c73f7efc50195f02ece750b92be9a20701b362095bb907f4f174d12e"
-    },
-    {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/lib/types/client/SelectionReferenceDock.d.ts",
-      "size": 631,
-      "sha256": "dfb1e4c55fb06d35f06afacfc48de689a1a2574937bfdf1eea898a4d7967c484"
-    },
-    {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/lib/types/client/SelectionSourceMarker.d.ts",
-      "size": 689,
-      "sha256": "6494d6553465d8cdb8b93614058cf9a1121bddfb7ed5d1af6c74f45edbc08f87"
-    },
-    {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/lib/types/client/api.d.ts",
-      "size": 607,
-      "sha256": "8f7b29ed0315c9fd62b5559ca8f213f31d5ea12a715fe65ea2823fa798e4e21e"
-    },
-    {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/lib/types/client/flow.d.ts",
-      "size": 1328,
-      "sha256": "fdf81ad3854a60fdbc285d22ddcabc32af14e2d3ab47bee8155723fe7249e65e"
-    },
-    {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/lib/types/client/index.d.ts",
-      "size": 658,
-      "sha256": "1d829c53c74590cfc17167ea332359ddd0dd0e630bfed1fe8e72a4b33e59193b"
-    },
-    {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/lib/types/client/locales.d.ts",
-      "size": 1060,
-      "sha256": "8998ae4ab0bad4b4c5f012d809302a9bf2aa27e3215e554c59b4abbc5c6c915b"
-    },
-    {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/lib/types/client/reference.d.ts",
-      "size": 1085,
-      "sha256": "13d2c2ccd2cb5b108d2480f5d01a0a212dad66eb9c25afd7410a0f72272b15a5"
-    },
-    {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/lib/types/client/selection.d.ts",
-      "size": 798,
-      "sha256": "1b7d6c1ab2a6ea85f85126800c55b4a4af57bd6afacdc3c3750d5302c2a6091e"
-    },
-    {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/lib/types/index.d.ts",
-      "size": 138,
-      "sha256": "ff6a4719c330aeffdb4a5d7156d307d156b97455617bb6acec88c5484225a1d4"
-    },
-    {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/lib/types/invariant.d.ts",
-      "size": 266,
-      "sha256": "c513b75771107630adbd312a3a6c548f50e8a7035038b497f8d7c43995bcc211"
-    },
-    {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/package.json",
-      "size": 2480,
-      "sha256": "cb803c731d9a617edef40cc4e2c2a0a90b3def7e778a79b8bfe2759293e7e342"
-    },
-    {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/src/client/SelectionActions.module.css",
-      "size": 2486,
-      "sha256": "677adb0ff8acb51dbddbf96b52825b0a244931c3cc049327458f4b5d7b7741b5"
-    },
-    {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/src/client/SelectionActions.tsx",
-      "size": 7590,
-      "sha256": "ae0aa45fff41187ff9a5ac4657c874a4eabde07d361ba26992ed4ad61aeb9fd6"
-    },
-    {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/src/client/SelectionReferenceDock.module.css",
-      "size": 1964,
-      "sha256": "d613c6a9c8098cce1f2d2718601dfd0cf95f719a679deeb09bdc8d92d6dcd54b"
-    },
-    {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/src/client/SelectionReferenceDock.tsx",
-      "size": 2004,
-      "sha256": "0ae132ab6ac0da12c9014a77e7761633d256e243395811dbc48e4ea95766981c"
-    },
-    {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/src/client/SelectionSourceMarker.tsx",
-      "size": 2414,
-      "sha256": "c34cb5df47d448efd2155866c8b641d8fcb8499a650a6540af9df8c067c785f1"
-    },
-    {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/src/client/api.ts",
+      "path": "payload/selection-actions/product/plugins/selection-actions/src/client/api.ts",
       "size": 1721,
       "sha256": "1dd88e1018588cb289737159ec0a50cc517392de733b2d73c61bfa08b94ecbf5"
     },
     {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/src/client/flow.ts",
-      "size": 4784,
-      "sha256": "0870ac762fabf99b76bc70bbaa99084376743548a44ed7ff836120baaf9c01ea"
+      "path": "payload/selection-actions/product/plugins/selection-actions/src/client/flow.ts",
+      "size": 4903,
+      "sha256": "e84385a41636852e7abb2feebe379645ebeb3710e28a573744fe39b3c79e52b1"
     },
     {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/src/client/index.ts",
-      "size": 4990,
-      "sha256": "63bd9eca75bd998332cf4cb3be28885e3cdf4fac94065ef6ce1d29f40a0c7630"
+      "path": "payload/selection-actions/product/plugins/selection-actions/src/client/icons.tsx",
+      "size": 1799,
+      "sha256": "b7ce4fd72ffafbfa5150d15feff92f7a24ce59c537ef33f45c1cb5085bb831cb"
     },
     {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/src/client/locales.ts",
+      "path": "payload/selection-actions/product/plugins/selection-actions/src/client/index.ts",
+      "size": 5319,
+      "sha256": "a67d8ef62a51d8485e5d66aaeb11c9ef8fd6259295f901fb827bbc6e04ff52aa"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/src/client/locales.ts",
       "size": 1451,
       "sha256": "c3ed440bf2888b564e942d1327d4d4b93d6cc667881ce67ee03ac433f93967af"
     },
     {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/src/client/reference.ts",
-      "size": 2614,
-      "sha256": "2aa818ba362639e3277a44d2694bcf6b9d2ce1671504516df05254acfd28ce18"
+      "path": "payload/selection-actions/product/plugins/selection-actions/src/client/reference.ts",
+      "size": 2588,
+      "sha256": "b938d7479747902daa09a7bc1bcedb1779be6d2e81070b17bc59848eefd4f9e8"
     },
     {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/src/client/selection.ts",
+      "path": "payload/selection-actions/product/plugins/selection-actions/src/client/selection.ts",
       "size": 3093,
       "sha256": "01f276658515e962d05a4dd80d4ea0aa1df52fc0105194b598c4e7eb5460bc74"
     },
     {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/src/css-modules.d.ts",
+      "path": "payload/selection-actions/product/plugins/selection-actions/src/client/SelectionActions.module.css",
+      "size": 2486,
+      "sha256": "677adb0ff8acb51dbddbf96b52825b0a244931c3cc049327458f4b5d7b7741b5"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/src/client/SelectionActions.tsx",
+      "size": 7661,
+      "sha256": "1064800b61007ec9234d0c25cb6ae54617596246feffda77729f2cf3eee1ff73"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/src/client/SelectionReferenceDock.module.css",
+      "size": 1964,
+      "sha256": "d613c6a9c8098cce1f2d2718601dfd0cf95f719a679deeb09bdc8d92d6dcd54b"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/src/client/SelectionReferenceDock.tsx",
+      "size": 2004,
+      "sha256": "0ae132ab6ac0da12c9014a77e7761633d256e243395811dbc48e4ea95766981c"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/src/client/SelectionSourceMarker.tsx",
+      "size": 2414,
+      "sha256": "c34cb5df47d448efd2155866c8b641d8fcb8499a650a6540af9df8c067c785f1"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/src/css-modules.d.ts",
       "size": 109,
       "sha256": "1b119eae282e4981c7ee24bbcf0ceafe34d57f6d5e6b148b2b7cc7c09cd89513"
     },
     {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/src/index.ts",
+      "path": "payload/selection-actions/product/plugins/selection-actions/src/index.ts",
       "size": 97,
       "sha256": "944a8c3670d4ffe25aa2c5205c58bd868d5c7891795bd337b323d6ff4b3e2545"
     },
     {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/src/invariant.ts",
+      "path": "payload/selection-actions/product/plugins/selection-actions/src/invariant.ts",
       "size": 567,
       "sha256": "aec333c27004df217ae0d215d7aea9d31e47b50438dc574b048b7a96cb3efac5"
     },
     {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/tsconfig.json",
-      "size": 535,
-      "sha256": "682ea4f06e0671b63b71dcdfa06122ae8cdc9e18352932064b6f58be7e2f7da3"
+      "path": "payload/selection-actions/product/plugins/selection-actions/tsconfig.json",
+      "size": 769,
+      "sha256": "5f4328c68631725e58c7e9e27ac6316fafa6b6847bfcd17176b83e0c2e1cd299"
     },
     {
-      "path": "payload/selection-actions/repository/packages/client/ui-selection-actions/tsdown.config.ts",
-      "size": 178,
-      "sha256": "ef36299475ad02185241dc5c49c5b9dddece8a2764f98fffb99c0ea7ef4a4eea"
+      "path": "payload/selection-actions/product/plugins/selection-actions/tsdown.config.ts",
+      "size": 185,
+      "sha256": "538e402650005a940446c0efe6ff25953aa378d45c3dd6bb8501bcde491c54bf"
+    },
+    {
+      "path": "payload/shared/settings-icons.patch",
+      "size": 3863,
+      "sha256": "77e0d4dd0bb02e1946301320ec813972f5cfc0054c408c5e5dd44690e5f692a4"
     }
   ],
   "excludes": [
@@ -409,7 +329,9 @@
     "conversation history",
     "user settings"
   ],
+  "sourceRepository": "https://github.com/niushuanan/xiaozhuang-dsh",
   "repository": "https://github.com/niushuanan/dsh-selection-memory",
-  "releaseTag": "xiaozhuang-v0.4.2",
-  "sourceRepository": "https://github.com/niushuanan/xiaozhuang-dsh"
+  "compatibilityPatches": [
+    "payload/shared/settings-icons.patch"
+  ]
 }
