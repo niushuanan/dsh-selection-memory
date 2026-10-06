@@ -11,7 +11,6 @@ import { BlockAssembler, ReasoningEffortId, createUserMessage } from "@deepseek-
 const MISSING_REVISION = "missing";
 const MAX_DOCUMENT_BYTES = 2 * 1024 * 1024;
 var MemoryStoreError = class extends Error {
-	status;
 	constructor(status, message) {
 		super(message);
 		this.status = status;
@@ -43,9 +42,6 @@ function validFailure(value) {
 }
 /** Owns only `${DSH_HOME}/memory/*`; callers never supply a path. */
 var MemoryDocumentStore = class {
-	root;
-	history;
-	statePath;
 	constructor(dshHome) {
 		this.root = join(dshHome, "memory");
 		this.history = join(this.root, "history");
@@ -150,7 +146,6 @@ const MAX_BODY_BYTES = 2113536;
 const MAX_SELECTION_CHARACTERS = 32e3;
 const MAX_CONTEXT_CHARACTERS = 16e4;
 var ApiError = class extends Error {
-	status;
 	constructor(status, message) {
 		super(message);
 		this.status = status;
@@ -479,10 +474,7 @@ async function streamMemoryResult(ctx, request, options, maxDocumentCharacters) 
 				type: "text",
 				text: request.input
 			}],
-			source: {
-				kind: "plugin",
-				plugin: "memory-system"
-			}
+			source: { kind: "memory-system" }
 		})],
 		maxTokens: request.maxTokens ?? MEMORY_MODEL_MAX_TOKENS,
 		...options.sessionId === void 0 ? {} : { sessionId: options.sessionId },
@@ -617,15 +609,9 @@ const MAX_BATCH_MEMORY_CHARACTERS = 4e3;
 * @param generate - Model adapter; defaults to the product flash route.
 */
 var IdleMemoryScheduler = class {
-	timer;
-	cycle;
-	queued = false;
-	stopped = false;
-	ctx;
-	store;
-	config;
-	generate;
 	constructor(ctx, store, config, generate) {
+		this.queued = false;
+		this.stopped = false;
 		this.ctx = ctx;
 		this.store = store;
 		this.config = config;
@@ -821,8 +807,7 @@ function injectMemoryContext(messages, memory) {
 			text: `${SAFETY_BOUNDARY}\n\n<memory_data>\n${memory}\n</memory_data>`
 		}],
 		source: {
-			kind: "plugin",
-			plugin: "memory-system",
+			kind: "memory-system",
 			form: "snapshot",
 			sections: [{
 				name: "relevant-memory",
@@ -851,9 +836,6 @@ function directText(messages) {
 	return messages.filter((message) => message.source.kind === "user").flatMap((message) => message.content).filter((block) => block.type === "text").map((block) => block.text).join("\n").trim();
 }
 var NativeMemoryService = class {
-	ctx;
-	store;
-	scheduler;
 	constructor(ctx, store, scheduler) {
 		this.ctx = ctx;
 		this.store = store;

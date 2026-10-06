@@ -118,7 +118,7 @@ window.__ModuleLoader__.load({
 		}
 		/** Append an unsent selected-text annotation to the current conversation. */
 		function addSelectionQuote(ctx, packet) {
-			const sessionId = ctx.sessions.list.getSnapshot().current;
+			const sessionId = ctx.uiSession.adapter.current.getSnapshot().key;
 			if (sessionId === void 0) throw new Error("there is no active conversation");
 			const binding = ctx.sessions.binding(sessionId);
 			if (binding === void 0) throw new Error("the active conversation is not ready");
@@ -266,7 +266,7 @@ window.__ModuleLoader__.load({
 		}
 		//#endregion
 		//#region src/client/icons.tsx
-		const IconWindowNewOutline16 = ({ size = 16, className }) => /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("svg", {
+		const IconWindowNewOutlineRegular = ({ size = 16, className }) => /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("svg", {
 			width: size,
 			height: size,
 			className,
@@ -281,7 +281,7 @@ window.__ModuleLoader__.load({
 				fill: "currentColor"
 			})]
 		});
-		const IconQuoteOutline16 = ({ size = 16, className }) => /* @__PURE__ */ (0, react_jsx_runtime.jsx)("svg", {
+		const IconQuoteOutlineRegular = ({ size = 16, className }) => /* @__PURE__ */ (0, react_jsx_runtime.jsx)("svg", {
 			width: size,
 			height: size,
 			className,
@@ -296,7 +296,7 @@ window.__ModuleLoader__.load({
 				strokeLinejoin: "round"
 			})
 		});
-		const IconMemoryOutline16 = ({ size = 16, className }) => /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("svg", {
+		const IconMemoryOutlineRegular = ({ size = 16, className }) => /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("svg", {
 			width: size,
 			height: size,
 			className,
@@ -318,8 +318,8 @@ window.__ModuleLoader__.load({
 			})]
 		});
 		//#endregion
-		//#region \0dsh-css:/private/tmp/dsh-publish-20260905.X1Ok1K/source/plugins/selection-actions/src/client/SelectionActions.module.css.mjs
-		const css$1 = "._8y_q8q_root{z-index:1200;pointer-events:auto;border:1px solid color-mix(in srgb,var(--dsw-alias-label-primary) 10%,transparent);background:color-mix(in srgb,var(--dsw-alias-bg-layer-1) 96%,transparent);backdrop-filter:blur(14px);border-radius:10px;max-width:min(320px,100vw - 24px);position:fixed;overflow:hidden;box-shadow:0 8px 28px #00000029}._8y_q8q_actions{padding:4px;display:flex}._8y_q8q_actions button,._8y_q8q_result button{height:30px;color:var(--dsw-alias-label-primary);font:inherit;cursor:pointer;white-space:nowrap;background:0 0;border:0;border-radius:7px;justify-content:center;align-items:center;gap:6px;padding:0 10px;font-size:11px;display:inline-flex}._8y_q8q_actions button:hover,._8y_q8q_result button:hover{background:var(--dsw-alias-bg-layer-2)}._8y_q8q_actions button:disabled,._8y_q8q_result button:disabled{cursor:default;opacity:.55}._8y_q8q_result{color:var(--dsw-alias-label-secondary);align-items:center;gap:8px;padding:7px 9px;font-size:11px;line-height:16px;display:flex}._8y_q8q_result span{text-overflow:ellipsis;white-space:nowrap;min-width:0;overflow:hidden}._8y_q8q_result button{height:24px;color:var(--dsw-alias-label-primary);flex:none;padding:0 6px;font-weight:600}._8y_q8q_error{border-top:1px solid var(--dsw-alias-border-l1);max-width:280px;color:var(--dsw-alias-red-primary,#d92d20);padding:7px 10px;font-size:10px;line-height:15px}._8y_q8q_sourceMarker{z-index:1150;background:var(--dsw-alias-state-business-primary);width:24px;height:24px;box-shadow:0 3px 12px color-mix(in srgb,var(--dsw-alias-state-business-primary) 28%,transparent);color:#fff;border-radius:8px 8px 8px 2px;outline:none;place-items:center;font-size:11px;font-weight:600;display:inline-grid;position:fixed}._8y_q8q_sourcePreview{border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-bg-layer-1);width:max-content;max-width:min(500px,100vw - 56px);box-shadow:var(--dsw-shadow-lv2);color:var(--dsw-alias-label-primary);white-space:pre-wrap;border-radius:14px;gap:10px;padding:12px 14px;font-size:13px;font-weight:400;line-height:20px;display:none;position:absolute;top:0;right:calc(100% + 8px)}._8y_q8q_sourceMarker:hover ._8y_q8q_sourcePreview,._8y_q8q_sourceMarker:focus-visible ._8y_q8q_sourcePreview{display:flex}._8y_q8q_sourcePreview>:first-child{color:var(--dsw-alias-label-tertiary)}";
+		//#region \0dsh-css:/Users/zhuanghongkai/Desktop/迭代DSH/xiaozhuang-dsh-upgrade-20261006/plugins/selection-actions/src/client/SelectionActions.module.css.mjs
+		const css$1 = "._0cNySG_root{z-index:1200;pointer-events:auto;border:1px solid color-mix(in srgb,var(--dsw-alias-label-primary) 10%,transparent);background:color-mix(in srgb,var(--dsw-alias-bg-layer-1) 96%,transparent);backdrop-filter:blur(14px);border-radius:10px;max-width:min(320px,100vw - 24px);position:fixed;overflow:hidden;box-shadow:0 8px 28px #00000029}._0cNySG_actions{padding:4px;display:flex}._0cNySG_actions button,._0cNySG_result button{height:30px;color:var(--dsw-alias-label-primary);font:inherit;cursor:pointer;white-space:nowrap;background:0 0;border:0;border-radius:7px;justify-content:center;align-items:center;gap:6px;padding:0 10px;font-size:11px;display:inline-flex}._0cNySG_actions button:hover,._0cNySG_result button:hover{background:var(--dsw-alias-bg-layer-2)}._0cNySG_actions button:disabled,._0cNySG_result button:disabled{cursor:default;opacity:.55}._0cNySG_result{color:var(--dsw-alias-label-secondary);align-items:center;gap:8px;padding:7px 9px;font-size:11px;line-height:16px;display:flex}._0cNySG_result span{text-overflow:ellipsis;white-space:nowrap;min-width:0;overflow:hidden}._0cNySG_result button{height:24px;color:var(--dsw-alias-label-primary);flex:none;padding:0 6px;font-weight:600}._0cNySG_error{border-top:1px solid var(--dsw-alias-border-l1);max-width:280px;color:var(--dsw-alias-red-primary,#d92d20);padding:7px 10px;font-size:10px;line-height:15px}._0cNySG_sourceMarker{z-index:1150;background:var(--dsw-alias-state-business-primary);width:24px;height:24px;box-shadow:0 3px 12px color-mix(in srgb,var(--dsw-alias-state-business-primary) 28%,transparent);color:#fff;border-radius:8px 8px 8px 2px;outline:none;place-items:center;font-size:11px;font-weight:600;display:inline-grid;position:fixed}._0cNySG_sourcePreview{border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-bg-layer-1);width:max-content;max-width:min(500px,100vw - 56px);box-shadow:var(--dsw-shadow-lv2);color:var(--dsw-alias-label-primary);white-space:pre-wrap;border-radius:14px;gap:10px;padding:12px 14px;font-size:13px;font-weight:400;line-height:20px;display:none;position:absolute;top:0;right:calc(100% + 8px)}._0cNySG_sourceMarker:hover ._0cNySG_sourcePreview,._0cNySG_sourceMarker:focus-visible ._0cNySG_sourcePreview{display:flex}._0cNySG_sourcePreview>:first-child{color:var(--dsw-alias-label-tertiary)}";
 		const tagId$1 = "@deepseek-ai/dsh-client-ui-selection-actions/SelectionActions.module.css";
 		if (typeof document !== "undefined" && document.querySelector("style[data-plugin-css=" + JSON.stringify(tagId$1) + "]") === null) {
 			const tag = document.createElement("style");
@@ -329,12 +329,12 @@ window.__ModuleLoader__.load({
 			document.head.appendChild(tag);
 		}
 		var SelectionActions_module_css_default = {
-			"actions": "_8y_q8q_actions",
-			"error": "_8y_q8q_error",
-			"result": "_8y_q8q_result",
-			"root": "_8y_q8q_root",
-			"sourceMarker": "_8y_q8q_sourceMarker",
-			"sourcePreview": "_8y_q8q_sourcePreview"
+			"actions": "_0cNySG_actions",
+			"error": "_0cNySG_error",
+			"result": "_0cNySG_result",
+			"root": "_0cNySG_root",
+			"sourceMarker": "_0cNySG_sourceMarker",
+			"sourcePreview": "_0cNySG_sourcePreview"
 		};
 		//#endregion
 		//#region src/client/SelectionSourceMarker.tsx
@@ -547,7 +547,7 @@ window.__ModuleLoader__.load({
 								onClick: () => {
 									runQuote();
 								},
-								children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)(IconQuoteOutline16, { size: 14 }), busy === "quote" ? t("quoting") : t("quote")]
+								children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)(IconQuoteOutlineRegular, { size: 14 }), busy === "quote" ? t("quoting") : t("quote")]
 							}),
 							/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("button", {
 								type: "button",
@@ -555,7 +555,7 @@ window.__ModuleLoader__.load({
 								onClick: () => {
 									runMemory();
 								},
-								children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)(IconMemoryOutline16, { size: 14 }), busy === "memory" ? t("remembering") : t("memory")]
+								children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)(IconMemoryOutlineRegular, { size: 14 }), busy === "memory" ? t("remembering") : t("memory")]
 							}),
 							sideChat === void 0 ? null : /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("button", {
 								type: "button",
@@ -563,7 +563,7 @@ window.__ModuleLoader__.load({
 								onClick: () => {
 									runSideChat();
 								},
-								children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)(IconWindowNewOutline16, { size: 14 }), busy === "sideChat" ? t("openingSideChat") : t("sideChat")]
+								children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)(IconWindowNewOutlineRegular, { size: 14 }), busy === "sideChat" ? t("openingSideChat") : t("sideChat")]
 							})
 						]
 					}) : null,
@@ -588,8 +588,8 @@ window.__ModuleLoader__.load({
 			})] });
 		}
 		//#endregion
-		//#region \0dsh-css:/private/tmp/dsh-publish-20260905.X1Ok1K/source/plugins/selection-actions/src/client/SelectionReferenceDock.module.css.mjs
-		const css = ".R5giXa_dock{box-sizing:border-box;width:calc(100% - 2 * var(--dsh-composer-side-clearance) - 4 * var(--dsh-composer-dock-inset));max-width:calc(var(--dsh-composer-card-max-width) - 4 * var(--dsh-composer-dock-inset));margin:0 auto}.R5giXa_row{flex-wrap:wrap;gap:6px;display:flex;position:relative}.R5giXa_annotation{border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-specific-input-major);min-width:0;height:32px;color:var(--dsw-alias-label-primary);box-shadow:var(--dsw-shadow-lv1);border-radius:12px;align-items:center;gap:6px;padding:0 5px 0 10px;font-size:12px;display:inline-flex}.R5giXa_marker{background:var(--dsw-alias-state-business-primary);color:#fff;border-radius:5px 5px 5px 1px;place-items:center;width:16px;height:16px;font-size:10px;line-height:1;display:inline-grid}.R5giXa_label{white-space:nowrap}.R5giXa_remove{width:24px;height:24px;color:var(--dsw-alias-label-tertiary);cursor:pointer;background:0 0;border:0;border-radius:999px;place-items:center;padding:0;display:inline-grid}.R5giXa_remove:hover{background:var(--dsw-alias-interactive-bg-hover);color:var(--dsw-alias-label-primary)}.R5giXa_preview{z-index:20;box-sizing:border-box;border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-bg-layer-1);width:max-content;max-width:min(520px,100%);box-shadow:var(--dsw-shadow-lv2);color:var(--dsw-alias-label-primary);white-space:pre-wrap;border-radius:14px;padding:12px 14px;font-size:13px;line-height:20px;display:none;position:absolute;bottom:calc(100% + 8px);right:0}.R5giXa_annotation:hover .R5giXa_preview,.R5giXa_annotation:focus-within .R5giXa_preview{gap:10px;display:flex}.R5giXa_previewNumber{color:var(--dsw-alias-label-tertiary);flex:none}.R5giXa_preview>:last-child{overflow-wrap:anywhere;min-width:0}";
+		//#region \0dsh-css:/Users/zhuanghongkai/Desktop/迭代DSH/xiaozhuang-dsh-upgrade-20261006/plugins/selection-actions/src/client/SelectionReferenceDock.module.css.mjs
+		const css = ".txYI9q_dock{box-sizing:border-box;width:calc(100% - 2 * var(--dsh-composer-side-clearance) - 4 * var(--dsh-composer-dock-inset));max-width:calc(var(--dsh-composer-card-max-width) - 4 * var(--dsh-composer-dock-inset));margin:0 auto}.txYI9q_row{flex-wrap:wrap;gap:6px;display:flex;position:relative}.txYI9q_annotation{border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-specific-input-major);min-width:0;height:32px;color:var(--dsw-alias-label-primary);box-shadow:var(--dsw-shadow-lv1);border-radius:12px;align-items:center;gap:6px;padding:0 5px 0 10px;font-size:12px;display:inline-flex}.txYI9q_marker{background:var(--dsw-alias-state-business-primary);color:#fff;border-radius:5px 5px 5px 1px;place-items:center;width:16px;height:16px;font-size:10px;line-height:1;display:inline-grid}.txYI9q_label{white-space:nowrap}.txYI9q_remove{width:24px;height:24px;color:var(--dsw-alias-label-tertiary);cursor:pointer;background:0 0;border:0;border-radius:999px;place-items:center;padding:0;display:inline-grid}.txYI9q_remove:hover{background:var(--dsw-alias-interactive-bg-hover);color:var(--dsw-alias-label-primary)}.txYI9q_preview{z-index:20;box-sizing:border-box;border:1px solid var(--dsw-alias-border-l1);background:var(--dsw-alias-bg-layer-1);width:max-content;max-width:min(520px,100%);box-shadow:var(--dsw-shadow-lv2);color:var(--dsw-alias-label-primary);white-space:pre-wrap;border-radius:14px;padding:12px 14px;font-size:13px;line-height:20px;display:none;position:absolute;bottom:calc(100% + 8px);right:0}.txYI9q_annotation:hover .txYI9q_preview,.txYI9q_annotation:focus-within .txYI9q_preview{gap:10px;display:flex}.txYI9q_previewNumber{color:var(--dsw-alias-label-tertiary);flex:none}.txYI9q_preview>:last-child{overflow-wrap:anywhere;min-width:0}";
 		const tagId = "@deepseek-ai/dsh-client-ui-selection-actions/SelectionReferenceDock.module.css";
 		if (typeof document !== "undefined" && document.querySelector("style[data-plugin-css=" + JSON.stringify(tagId) + "]") === null) {
 			const tag = document.createElement("style");
@@ -599,14 +599,14 @@ window.__ModuleLoader__.load({
 			document.head.appendChild(tag);
 		}
 		var SelectionReferenceDock_module_css_default = {
-			"annotation": "R5giXa_annotation",
-			"dock": "R5giXa_dock",
-			"label": "R5giXa_label",
-			"marker": "R5giXa_marker",
-			"preview": "R5giXa_preview",
-			"previewNumber": "R5giXa_previewNumber",
-			"remove": "R5giXa_remove",
-			"row": "R5giXa_row"
+			"annotation": "txYI9q_annotation",
+			"dock": "txYI9q_dock",
+			"label": "txYI9q_label",
+			"marker": "txYI9q_marker",
+			"preview": "txYI9q_preview",
+			"previewNumber": "txYI9q_previewNumber",
+			"remove": "txYI9q_remove",
+			"row": "txYI9q_row"
 		};
 		//#endregion
 		//#region src/client/SelectionReferenceDock.tsx
@@ -647,7 +647,7 @@ window.__ModuleLoader__.load({
 								onClick: () => {
 									removeReference(occurrence.occurrenceId);
 								},
-								children: /* @__PURE__ */ (0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.IconCloseOutline16, { size: 13 })
+								children: /* @__PURE__ */ (0, react_jsx_runtime.jsx)(_deepseek_ai_dsh_client_ui_primitives.IconCloseOutlineRegular, { size: 13 })
 							}),
 							/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
 								className: SelectionReferenceDock_module_css_default.preview,
@@ -667,6 +667,7 @@ window.__ModuleLoader__.load({
 		const inject = [
 			"slots",
 			"sessions",
+			"uiSession",
 			"workspaces",
 			"uiWorkspace",
 			"conversation",
@@ -717,11 +718,12 @@ window.__ModuleLoader__.load({
 			}, SelectionReferenceDock));
 			if (isAuxiliaryWindow()) {
 				const hydrate = () => {
-					const sessionId = ctx.sessions.list.getSnapshot().current;
+					const sessionId = ctx.uiSession.adapter.current.getSnapshot().key;
 					if (sessionId !== void 0) consumeSelectionQuoteHandoff(ctx, sessionId);
 				};
 				hydrate();
 				ctx.effect(() => ctx.sessions.list.subscribe(hydrate), "selection-actions: hydrate pane quote");
+				ctx.effect(() => ctx.uiSession.adapter.current.subscribe(hydrate), "selection-actions: hydrate selected pane quote");
 				ctx.effect(() => {
 					window.addEventListener("storage", hydrate);
 					return () => {
@@ -739,7 +741,7 @@ window.__ModuleLoader__.load({
 					return {
 						capture: () => {
 							const state = ctx.sessions.list.getSnapshot();
-							const sessionId = state.current;
+							const sessionId = ctx.uiSession.adapter.current.getSnapshot().key;
 							if (sessionId === void 0) return void 0;
 							return captureDshSelection(document, sessionId, state.byId[sessionId]?.cwd);
 						},

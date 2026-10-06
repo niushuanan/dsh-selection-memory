@@ -1,8 +1,12 @@
 {
   "schemaVersion": 1,
   "kind": "xiaozhuang-dsh-plugin-export",
-  "createdAt": "2026-09-05T04:07:03.987Z",
-  "sourceCommit": "e745482d8f5e33497d9ed46a2a88681456024334",
+  "createdAt": "2026-10-06T18:40:04.058033+00:00",
+  "sourceCommit": "efbbbc6a1977cf4559bf306221533eb16393664c",
+  "sourceRepository": "https://github.com/niushuanan/xiaozhuang-dsh",
+  "repository": "https://github.com/niushuanan/dsh-selection-memory",
+  "targetHarness": "0.2.1-alpha.1",
+  "upgradeWorkflow": "https://github.com/oh-my-dsh/dsh-plugin-upgrade-skill/",
   "plugins": [
     {
       "id": "selection-actions",
@@ -18,7 +22,8 @@
           "kind": "product",
           "path": "plugins/selection-actions"
         }
-      ]
+      ],
+      "version": "0.1.2-rc.1"
     },
     {
       "id": "memory-system",
@@ -34,40 +39,11 @@
           "kind": "product",
           "path": "plugins/memory-system"
         }
-      ]
+      ],
+      "version": "0.2.0"
     }
   ],
   "files": [
-    {
-      "path": "payload/memory-system/product/plugins/memory-system/cordis.patch.yml",
-      "size": 61,
-      "sha256": "eef0099fc08626d4227c832b64167b34675b98c0850f17507f1e63e918be9d09"
-    },
-    {
-      "path": "payload/memory-system/product/plugins/memory-system/lib/client.js",
-      "size": 18200,
-      "sha256": "947786c385c5a509276a61735e4335b3ac1a6b1e920744aa5ecd763b4c46aa23"
-    },
-    {
-      "path": "payload/memory-system/product/plugins/memory-system/lib/client.js.map",
-      "size": 23038,
-      "sha256": "e896d537495639622e15053253d247c41ffbb263916af6d949693a10cefb8b7d"
-    },
-    {
-      "path": "payload/memory-system/product/plugins/memory-system/lib/index.js",
-      "size": 36953,
-      "sha256": "c5df385bd85f17fe35796797db254c729133b1249a73e856649d545c9aa237a0"
-    },
-    {
-      "path": "payload/memory-system/product/plugins/memory-system/lib/invariant.js",
-      "size": 450,
-      "sha256": "7f0c58ee809a99f15c943fb6c8acc9e8efeae933ff4f3aadb5f9bb8a51905c9b"
-    },
-    {
-      "path": "payload/memory-system/product/plugins/memory-system/package.json",
-      "size": 3015,
-      "sha256": "09c21b48af77f8ea4a477d5466c2847deda8349ff29e801fdcb2d2ddcbd7605b"
-    },
     {
       "path": "payload/memory-system/product/plugins/memory-system/README.i18n.yaml",
       "size": 439,
@@ -84,24 +60,294 @@
       "sha256": "2a0c4c0f025cb2da0c0a87776c4c1f2a18dfc389482f740ec114a6781d4b1359"
     },
     {
+      "path": "payload/memory-system/product/plugins/memory-system/cordis.patch.yml",
+      "size": 61,
+      "sha256": "eef0099fc08626d4227c832b64167b34675b98c0850f17507f1e63e918be9d09"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/client.js",
+      "size": 18014,
+      "sha256": "e0ed1ab20b5ee17350d774ebee8dd293dbd81a1e8f02e8746095ee550f5a9544"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/client.js.map",
+      "size": 22680,
+      "sha256": "122cae3fc4f07b3a996348fd3b4cb05cc391be3f011f94e4ed4aed33867a1530"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/index.js",
+      "size": 36792,
+      "sha256": "2d204447187e19a7ce46672718b14613f38417be242c0f9fc965d2a0f66da505"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/api.d.ts",
+      "size": 1244,
+      "sha256": "a58b53f0cf093b6b24fab1690be6605f7b8c7845eb7a36f0420719b19445274f"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/api.d.ts.map",
+      "size": 1021,
+      "sha256": "2a50c8a5b0e34ce3ce83cabf425fdcb34467853b9005ec05b5f6d809b52b0e60"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/api.js",
+      "size": 6177,
+      "sha256": "6de3804ce049d0df213f3a0884a5f0ff9aba466836b522d72ed06113a90016c5"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/api.js.map",
+      "size": 6413,
+      "sha256": "a36141fbba3287f67a8403c9705a229a9706ed621279e981e3720e467b9747d1"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/client/MemorySettings.d.ts",
+      "size": 421,
+      "sha256": "39bfa4fb63ba28d106d3bd129c3102c3a8e38c1d46d9cade16b3610c69286ca3"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/client/MemorySettings.d.ts.map",
+      "size": 421,
+      "sha256": "504fdc777ddaeb6f9a6dc4ed12d468971c7e9f5f5e1b45dd67b51bede07b95c0"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/client/MemorySettings.js",
+      "size": 9139,
+      "sha256": "21ccf6b765b7a970d9cc156d0cc9c4cd1421087a18e36e4ff3930140083cb231"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/client/MemorySettings.js.map",
+      "size": 9461,
+      "sha256": "b9634c4a2625123c8c0830f01c6257ef33ab7a182243be08a36af0372a102f71"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/client/api.d.ts",
+      "size": 1302,
+      "sha256": "2a03b4c62d8b6b320d2d79c3cc45039d163ef94f185488472e009af919544229"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/client/api.d.ts.map",
+      "size": 999,
+      "sha256": "97c5376c2777c2dc36a5c9f833f16ee0454003db4c6036901b23481ca59ae577"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/client/api.js",
+      "size": 1892,
+      "sha256": "8d651bc31821ab61f355430a4e152bbec8f025bd2ed9bb98fb6688f7d008146f"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/client/api.js.map",
+      "size": 1839,
+      "sha256": "4c2300ba88e6858060512d056427d5416e3c6b0e0763126f586232f177329f4d"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/client/index.d.ts",
+      "size": 705,
+      "sha256": "eb6d03f9bd1ec73c393c99cb6942a812fd56455466985be8833adbc43bbbe18a"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/client/index.d.ts.map",
+      "size": 546,
+      "sha256": "3bc6eeee097bf5618cbd6eba201956efe38e827f837f315ef37e2cb0c2311547"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/client/index.js",
+      "size": 857,
+      "sha256": "fd6b91734dd87b074df2bc92d6a01e0623078329214bafbb4791cb47ed527a2e"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/client/index.js.map",
+      "size": 909,
+      "sha256": "e5c726f872c8d04bd63b2916f87b6098f01a3173febe010464afa16690d27d44"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/client/locales.d.ts",
+      "size": 1222,
+      "sha256": "f9343eeb1515acffaa8f7b3295b013f136f56a612f31a48c8141a3145cdc9ac1"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/client/locales.d.ts.map",
+      "size": 323,
+      "sha256": "4e46aa7675f96c3c0a5bf9fe3ed29a8dc857e1fa1e7c97d3fab64edbe6c279bd"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/client/locales.js",
+      "size": 1735,
+      "sha256": "a8f4a349ce8b5f852cc34bf2b5cb16c9d09f2cf70ff06f254424b867980b3c59"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/client/locales.js.map",
+      "size": 1193,
+      "sha256": "df1dc5f4c79ce5fdb77dbb9e751450f96b78e20ed5a7e489ebee0fb651291298"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/domain.d.ts",
+      "size": 678,
+      "sha256": "8454385718cfc9a0e1a220f9dcae456048788ab1f6a2d3722ae2632ac78dfaff"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/domain.d.ts.map",
+      "size": 530,
+      "sha256": "ee3e8339034118cf7d0f445005813747b9cb5918518499dfd38d1bac34a6067a"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/domain.js",
+      "size": 3652,
+      "sha256": "f7d6d5d092f303f76a0d24512ba46f16e46e780b04f45421333772811261c547"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/domain.js.map",
+      "size": 3834,
+      "sha256": "a6156702e97b64e7b0c213eaac9aa9e96b130b863b3f387bc552241a3a3dd72d"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/index.d.ts",
+      "size": 854,
+      "sha256": "e6ba9356906c269ad09db74a2a8e27f1019db6939ae72fc4166874b91796a940"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/index.d.ts.map",
+      "size": 591,
+      "sha256": "9ffcf3e9d879a750c898e5c46a209f297c480679702adff364e8513250adcbfd"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/index.js",
+      "size": 4936,
+      "sha256": "20a089ba3d0e972430a78f0366db0d484b95a572d8019e5393dee08b242269df"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/index.js.map",
+      "size": 5005,
+      "sha256": "08a57b1ac70a7118bf78b2911a22a3285f7a846b5f5e87c6e3b8fc01d444de42"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/maintenance.d.ts",
+      "size": 2033,
+      "sha256": "da16078510bdaaea89dd6af4458007bc276b98b6b52dbb1ca0ca4ebe6744515d"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/maintenance.d.ts.map",
+      "size": 1561,
+      "sha256": "9839e776bf0868e23742a44b680fbb3ade92e3373b8a1c13111276840b6375b3"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/maintenance.js",
+      "size": 4782,
+      "sha256": "ce2d9d37f2b9e4100796a0f04cd85ab0a839956084900d4a74177e53f3838857"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/maintenance.js.map",
+      "size": 4617,
+      "sha256": "898aba4379be20dc9dc3371e13d028e5e452cfafbe05a2085ae3a089e48a4332"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/model.d.ts",
+      "size": 2301,
+      "sha256": "814ef63bcb217b7d8a13e3daef3ae64f674b3a71c051b8a4fc43bc9e49d401c3"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/model.d.ts.map",
+      "size": 1713,
+      "sha256": "c998dd149ff9d12d1f375a9d2b5b7a6e2a9fc5674d7cf1274cadd18578082439"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/model.js",
+      "size": 9129,
+      "sha256": "85de6883280beb39e5a674c440c9fd21be6f81f95645dd269573d7ba10f776ed"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/model.js.map",
+      "size": 6077,
+      "sha256": "f2799db3cf45da1da6ea1ff8f1b468566de03da6acf65d7c810ea530d6a25820"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/recall.d.ts",
+      "size": 391,
+      "sha256": "64ec0d9773c8be36189532f32a4908c5b80381e66ea252ccbf9f3537b3bf0bd4"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/recall.d.ts.map",
+      "size": 274,
+      "sha256": "e986557b3d3943bcac4f4a80d9f2669f8d0a6d41f136a7791728e2425479b942"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/recall.js",
+      "size": 1260,
+      "sha256": "305371e1b615f3dd7ab679e3d1820c3d22794e7bdce0bf2ca17f55c030f3c95f"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/recall.js.map",
+      "size": 1002,
+      "sha256": "960e65b4ce28896b5b283b583866a0f5ea96e60a0e95e4025b4f1ba0ce07e31e"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/scheduler.d.ts",
+      "size": 3231,
+      "sha256": "829d151091c86a56af2c2d86d64a122ef3e766b4052ba3733c6989f8e6439a82"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/scheduler.d.ts.map",
+      "size": 1283,
+      "sha256": "09d256ca63c1b7defc21e17015fa5f3d5d37ecc6e871a55fdf0326bffc3e34f8"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/scheduler.js",
+      "size": 8403,
+      "sha256": "f074a164bb73e5b63685eb0b4e62efbf7ac5060aeda0dc6f9d90d86f0ae6e1a6"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/scheduler.js.map",
+      "size": 5898,
+      "sha256": "3e865ef357716ae0f6fe669b4e1aa8b5c4b0fad339a9b690f58c30c0b4ee3b2c"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/store.d.ts",
+      "size": 1163,
+      "sha256": "e636e87589291d2bc744e0896431a153128b0a3376dabea9ac326183ae9f94e4"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/store.d.ts.map",
+      "size": 948,
+      "sha256": "71abce307a1576034428f14377aa28a99e1f87e86ef6a3d4aabed91cc807de46"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/store.js",
+      "size": 6595,
+      "sha256": "26701daf18b9e1cc4ca5580ab9f005f5f750a3ca83fade94e07e835ec1f04e03"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/store.js.map",
+      "size": 6962,
+      "sha256": "f94a5828426a71ab4305a4f001f6bb1dcde67cddb4d230e11ecae020dedb51c9"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/types.d.ts",
+      "size": 1717,
+      "sha256": "337932105ff4e4c01496a880c35f50b810512966dca5d42fa4ae11636dadd05c"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/types.d.ts.map",
+      "size": 1516,
+      "sha256": "4809faf094cc287b13afbfad1cd32b8ee18e5400ada9cddbbd2c8aa4c21801fe"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/types.js",
+      "size": 113,
+      "sha256": "8b76a5c853e8e71276d6731b5aa44de3237f141c311048e8079de0fd196fb6f5"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/types/types.js.map",
+      "size": 116,
+      "sha256": "2b212eaf4574b73f09960fbeb096f5ad4450a55c7fd8d7ea05161875a59e294b"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/package.json",
+      "size": 3017,
+      "sha256": "0c8b5160ef81e55d0e8414fc7f42164a681f8e84caec711c89c823966679b963"
+    },
+    {
       "path": "payload/memory-system/product/plugins/memory-system/src/api.ts",
       "size": 6804,
       "sha256": "ead4057f72cc4b6565545e286de71f800d80cea691f44829aa937424d8393914"
-    },
-    {
-      "path": "payload/memory-system/product/plugins/memory-system/src/client/api.ts",
-      "size": 2417,
-      "sha256": "839c0d54a935f72d96fc4fd53adc19074a1e7e6554d8a4b17a8e2d53c024e6bd"
-    },
-    {
-      "path": "payload/memory-system/product/plugins/memory-system/src/client/index.ts",
-      "size": 1447,
-      "sha256": "55b3d9b2066797610e607d8eccf797c59a7c068944ead9e14cd506780e37729a"
-    },
-    {
-      "path": "payload/memory-system/product/plugins/memory-system/src/client/locales.ts",
-      "size": 1700,
-      "sha256": "55c1ce02a4c866691d09215ed548fad3fe4fe8b980a912deb8e7ff75b26c692f"
     },
     {
       "path": "payload/memory-system/product/plugins/memory-system/src/client/MemorySettings.module.css",
@@ -112,6 +358,21 @@
       "path": "payload/memory-system/product/plugins/memory-system/src/client/MemorySettings.tsx",
       "size": 9088,
       "sha256": "2f6823486a10b3d267ac8def904317cfa74ba8cb0606accda0029df93877ee0e"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/src/client/api.ts",
+      "size": 2417,
+      "sha256": "839c0d54a935f72d96fc4fd53adc19074a1e7e6554d8a4b17a8e2d53c024e6bd"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/src/client/index.ts",
+      "size": 1217,
+      "sha256": "4c1c1b10195c9d0b085fe03f6a08d3d6209681253649a4ef840ead85784c7cc6"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/src/client/locales.ts",
+      "size": 1700,
+      "sha256": "55c1ce02a4c866691d09215ed548fad3fe4fe8b980a912deb8e7ff75b26c692f"
     },
     {
       "path": "payload/memory-system/product/plugins/memory-system/src/css-modules.d.ts",
@@ -129,24 +390,19 @@
       "sha256": "c111a3c5267a600f674701c1697c121e6dfa748b9cfe297547d39d02f9ae50e8"
     },
     {
-      "path": "payload/memory-system/product/plugins/memory-system/src/invariant.ts",
-      "size": 643,
-      "sha256": "c65052f24316441567d6bad7cdef22f5a306dac26cadf02ac3d4d5cd6ab8935a"
-    },
-    {
       "path": "payload/memory-system/product/plugins/memory-system/src/maintenance.ts",
       "size": 5726,
       "sha256": "3730a1b5f798e77f4e70089fc7f1f0c1e2776cf247e35e795defbdf5f6095479"
     },
     {
       "path": "payload/memory-system/product/plugins/memory-system/src/model.ts",
-      "size": 10413,
-      "sha256": "31e3a7476bada634234fe9b7f250c13a3f3d6ff6fcd32c213df8a9c0ef1e13d3"
+      "size": 10429,
+      "sha256": "2f88056873621cde1011f4a838d629e9b38f4494896d4c0501738ed94b4ba1e0"
     },
     {
       "path": "payload/memory-system/product/plugins/memory-system/src/recall.ts",
-      "size": 1186,
-      "sha256": "5423a5bcefdd27cd196d591d6f1c40f9f16f9b88e122fa8c7728b1054a843411"
+      "size": 1405,
+      "sha256": "0e51b63279baa966a02b5209de233e4771ac0a79cb713f664deb70502f689ec7"
     },
     {
       "path": "payload/memory-system/product/plugins/memory-system/src/scheduler.ts",
@@ -165,53 +421,23 @@
     },
     {
       "path": "payload/memory-system/product/plugins/memory-system/tsconfig.client.json",
-      "size": 597,
-      "sha256": "a4e03218357df5bf51534e22adacb88f2ce3f9c57df6fc00609b17ed6cc40438"
+      "size": 299,
+      "sha256": "7d113fdd10cde4b559a927bb4e6100f30b09c8832202a7d777fa19baf5e141d3"
     },
     {
       "path": "payload/memory-system/product/plugins/memory-system/tsconfig.host.json",
-      "size": 899,
-      "sha256": "d054cd95acff1eef3d5b5ccbbab28b97bc02756886602c03ae1022be43dc2978"
+      "size": 414,
+      "sha256": "fb6b56423b9c1c16079267efa5fb2ed9c769837755f5e6300401a0d37dc1aa01"
     },
     {
       "path": "payload/memory-system/product/plugins/memory-system/tsconfig.json",
-      "size": 122,
-      "sha256": "9ae2773ce422b78211f4ed8c2d4f6adb6737a9d0f33c4c392b1ea01a41bec759"
+      "size": 132,
+      "sha256": "9bf5c82119f3e102c3428221bec8a98cd76295141c21dadfbc7e6088563ae25d"
     },
     {
       "path": "payload/memory-system/product/plugins/memory-system/tsdown.config.ts",
-      "size": 171,
-      "sha256": "4f31247ba88f56f23a5f9762732ea6c44bea2950d23dc4861352ed9b51214d09"
-    },
-    {
-      "path": "payload/selection-actions/product/plugins/selection-actions/cordis.patch.yml",
-      "size": 68,
-      "sha256": "f450e3edb01493e054180848ccb9b8c2b836c7580d471a0fa722394966070bbb"
-    },
-    {
-      "path": "payload/selection-actions/product/plugins/selection-actions/lib/client.js",
-      "size": 35083,
-      "sha256": "e53b263c24b5afd63ff3c40859bc1284f37268da7bb4aa3ee2533f355f798236"
-    },
-    {
-      "path": "payload/selection-actions/product/plugins/selection-actions/lib/client.js.map",
-      "size": 50347,
-      "sha256": "606d0bf41aad7d32c32362591d04e9c540d76ad4e518e4d5836ca9fb4fd3b88d"
-    },
-    {
-      "path": "payload/selection-actions/product/plugins/selection-actions/lib/index.js",
-      "size": 138,
-      "sha256": "8252bc6f35659930a27f1a150bfb18acff6e761ca093ad7a5663a8037babda6d"
-    },
-    {
-      "path": "payload/selection-actions/product/plugins/selection-actions/lib/invariant.js",
-      "size": 451,
-      "sha256": "64239aba91ce50d739262d4c31e5795ae771d4e84361182758725c7808e300cb"
-    },
-    {
-      "path": "payload/selection-actions/product/plugins/selection-actions/package.json",
-      "size": 2752,
-      "sha256": "a68cf2a70bddc6b820079dbf99f4f04ccda371a93c002811d5236596cb17518b"
+      "size": 151,
+      "sha256": "c293929c3efecbaf96104134aee8065a357b909745574be1806d34e3047e84fb"
     },
     {
       "path": "payload/selection-actions/product/plugins/selection-actions/README.i18n.yaml",
@@ -229,24 +455,294 @@
       "sha256": "e836777bd49d093cee32a13f40ff01fcb0327fda458afe1767670d0219992384"
     },
     {
+      "path": "payload/selection-actions/product/plugins/selection-actions/cordis.patch.yml",
+      "size": 68,
+      "sha256": "f450e3edb01493e054180848ccb9b8c2b836c7580d471a0fa722394966070bbb"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/client.js",
+      "size": 35352,
+      "sha256": "971333f28f0cbbd42a90e38e81dd2ed8527db2e1545f6808b43ffe41f858e48e"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/client.js.map",
+      "size": 51111,
+      "sha256": "deac5d57bafef1829c7304bdeff63f3dfbd45cf0bb5ff897b88e4794492a6e67"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/index.js",
+      "size": 138,
+      "sha256": "8252bc6f35659930a27f1a150bfb18acff6e761ca093ad7a5663a8037babda6d"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/SelectionActions.d.ts",
+      "size": 1025,
+      "sha256": "6d2f8b3b4cb124886e00a4d26e7577e15873d87ed93d2637552c625ee606e66f"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/SelectionActions.d.ts.map",
+      "size": 942,
+      "sha256": "f6caf23a02bfed979d6559ade9b41c9166fb7f7b63f561f0b6d13f72a5f5fe48"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/SelectionActions.js",
+      "size": 7413,
+      "sha256": "43b80da5c1dbb89ff1c87394fde8f38b871d1997d021cef37691396689bc1ce1"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/SelectionActions.js.map",
+      "size": 7787,
+      "sha256": "5521d439ac80cd708600ef1e5b2b4338ebea3499832627a53a757a41654ad7dd"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/SelectionReferenceDock.d.ts",
+      "size": 631,
+      "sha256": "dfb1e4c55fb06d35f06afacfc48de689a1a2574937bfdf1eea898a4d7967c484"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/SelectionReferenceDock.d.ts.map",
+      "size": 476,
+      "sha256": "3b5854b6ccddf2387de262ceff89a98b19a5dc65c1860f13ee328b8be0161c88"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/SelectionReferenceDock.js",
+      "size": 1700,
+      "sha256": "b89fd67b5493821b00774786855ceaf40d9489a95514a92efb78f7b0225e8b38"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/SelectionReferenceDock.js.map",
+      "size": 1560,
+      "sha256": "23e09299ba093ef1a8fba3da147637b4d3f4095020c69cd8b6ad97284639615d"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/SelectionSourceMarker.d.ts",
+      "size": 689,
+      "sha256": "6494d6553465d8cdb8b93614058cf9a1121bddfb7ed5d1af6c74f45edbc08f87"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/SelectionSourceMarker.d.ts.map",
+      "size": 665,
+      "sha256": "57f08ddd2e3a896c37087968e66fef542e26bd81454a38d64cf241c917e85d0b"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/SelectionSourceMarker.js",
+      "size": 2374,
+      "sha256": "2119716ef4583fb0a84199846dd944343f0072acb45acbb39c23b02a82c1363a"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/SelectionSourceMarker.js.map",
+      "size": 2316,
+      "sha256": "0ce192d43f3ceac6d08f36c410df71b0193d8f71ff311c4dc8a3da7dd26aadd0"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/api.d.ts",
+      "size": 607,
+      "sha256": "8f7b29ed0315c9fd62b5559ca8f213f31d5ea12a715fe65ea2823fa798e4e21e"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/api.d.ts.map",
+      "size": 490,
+      "sha256": "0be4180fa9a8b653ee507648e7026edbee181e5a187b293139f4abb47067def9"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/api.js",
+      "size": 1583,
+      "sha256": "acdc7a1c4aca00a43d680e96d640a51ea5f44b140779bd4122b2bdf4dd6b94bd"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/api.js.map",
+      "size": 1547,
+      "sha256": "d49cdc1d52ca6991052ba332e14c563bf49695f4c9ed2f6d8efeb58607047786"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/flow.d.ts",
+      "size": 1385,
+      "sha256": "b9773d5e1a4ac43b0b9a0d261ed800cd11ab555d13c84e67bd2ae6f885aecf03"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/flow.d.ts.map",
+      "size": 981,
+      "sha256": "d1801810fb4ea73afb12230efd32bfb682844e4ac09c61b9dc8c05dab313c421"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/flow.js",
+      "size": 3983,
+      "sha256": "4204abe8cbee3dfa217a40a0e566072e6aa72e888bff1fc43fa9cb788c6059cf"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/flow.js.map",
+      "size": 3952,
+      "sha256": "64477898b92a20605b3121b58aa9b6ee5ed8c81e0a3bbcf9cc95616d99562ecf"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/icons.d.ts",
+      "size": 451,
+      "sha256": "2f6d08505017246aea617df5cf599dffa5abbbe3d073e86771adc820de058c94"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/icons.d.ts.map",
+      "size": 352,
+      "sha256": "accb894f6080cc6f3d7404f72968fb93a0a00f47e9782a15384aca9d5ff7792f"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/icons.js",
+      "size": 1925,
+      "sha256": "3b5496a1ba639c3183c407f4e44f049891d4974fa98fa33f5cc40671d6905206"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/icons.js.map",
+      "size": 1254,
+      "sha256": "cdbe4f2297fa35a27b0d5ed24cea145c551e8b69d2868658a80dbfc25777e220"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/index.d.ts",
+      "size": 650,
+      "sha256": "9b2cd5c3772bf93dc5dce09032b0c24673bd4ecb9d6b2844dd77aaeeaa655442"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/index.d.ts.map",
+      "size": 505,
+      "sha256": "742a731a2954564de4bda1d876cae42c5cc6977c2eb2774e3a7985ff4ea8f084"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/index.js",
+      "size": 5436,
+      "sha256": "08d652ee6aed56b82ce97cccf165efea2493b34d07d375d10253ecbc343527dc"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/index.js.map",
+      "size": 5025,
+      "sha256": "e2d804f1d3cb306ef9a544fa5f58563d37fbcf276a0e7b00777ffa212627b30c"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/locales.d.ts",
+      "size": 1060,
+      "sha256": "8998ae4ab0bad4b4c5f012d809302a9bf2aa27e3215e554c59b4abbc5c6c915b"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/locales.d.ts.map",
+      "size": 401,
+      "sha256": "da73766e7661f23449f088413d49bad9384e392c4d05923237351b9eb3a43382"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/locales.js",
+      "size": 1268,
+      "sha256": "2547c6947d3ce1f56788d92a601f7487263d94e69ae4b3b957895917f8200e38"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/locales.js.map",
+      "size": 851,
+      "sha256": "c4e56e12ac168f26cdae887a9d16f902a758ff9b9d3119be33996546157bd511"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/reference.d.ts",
+      "size": 1085,
+      "sha256": "13d2c2ccd2cb5b108d2480f5d01a0a212dad66eb9c25afd7410a0f72272b15a5"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/reference.d.ts.map",
+      "size": 735,
+      "sha256": "9c33440812c557e71cabc3f8592e5537604f4df5032322eef2c88da119121915"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/reference.js",
+      "size": 2088,
+      "sha256": "e960d7b57fa6aab231fa23777308f011bd129775d60e802e55a26884c6e78423"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/reference.js.map",
+      "size": 1652,
+      "sha256": "560410a1bed89f198dd0db7766d922383fdd67ec98a6626b269635a548fccaf1"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/selection.d.ts",
+      "size": 798,
+      "sha256": "1b7d6c1ab2a6ea85f85126800c55b4a4af57bd6afacdc3c3750d5302c2a6091e"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/selection.d.ts.map",
+      "size": 768,
+      "sha256": "814b3202a16924dd0a437f627c641bc833ae94e6cc3024e39c22313d18fa00e5"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/selection.js",
+      "size": 2687,
+      "sha256": "f899d1c69cd5283691eb739f16edbfc407ba4157d92d6ee7d4f14cc0737ecd65"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/client/selection.js.map",
+      "size": 2903,
+      "sha256": "331d6ede2eb36aa3c3eb872930f0499ca06ee012b6161b17331519859f2f19f5"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/index.d.ts",
+      "size": 138,
+      "sha256": "ff6a4719c330aeffdb4a5d7156d307d156b97455617bb6acec88c5484225a1d4"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/index.d.ts.map",
+      "size": 151,
+      "sha256": "43e04a4f8fc812d304a5307f49f02d4c6b2638c2971b24a1a287d70cef8aebc6"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/index.js",
+      "size": 125,
+      "sha256": "5221894283fded998ab3321f4d4e33e65cf30cb5573604b48a9af14713c645e6"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/lib/types/index.js.map",
+      "size": 147,
+      "sha256": "b0301b9f7ff2a7f69419f4d2798723aee67e8fd764e5e87037583b60e4e05c48"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/package.json",
+      "size": 2719,
+      "sha256": "af88d039e6f9ffa53d35083379b3cd61bb92b4f9d78dfe639cf78c6dab2cdcaf"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/src/client/SelectionActions.module.css",
+      "size": 2486,
+      "sha256": "677adb0ff8acb51dbddbf96b52825b0a244931c3cc049327458f4b5d7b7741b5"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/src/client/SelectionActions.tsx",
+      "size": 7691,
+      "sha256": "b16bba5d1d7415f1f0186cbca9001f1b13b6344e7eaf3513087027aa54b6b498"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/src/client/SelectionReferenceDock.module.css",
+      "size": 1964,
+      "sha256": "d613c6a9c8098cce1f2d2718601dfd0cf95f719a679deeb09bdc8d92d6dcd54b"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/src/client/SelectionReferenceDock.tsx",
+      "size": 2014,
+      "sha256": "80109b7522a7ce3de36a355b13e0d87ed1e41360e7b0f76de16c4235e64fb0aa"
+    },
+    {
+      "path": "payload/selection-actions/product/plugins/selection-actions/src/client/SelectionSourceMarker.tsx",
+      "size": 2414,
+      "sha256": "c34cb5df47d448efd2155866c8b641d8fcb8499a650a6540af9df8c067c785f1"
+    },
+    {
       "path": "payload/selection-actions/product/plugins/selection-actions/src/client/api.ts",
       "size": 1721,
       "sha256": "1dd88e1018588cb289737159ec0a50cc517392de733b2d73c61bfa08b94ecbf5"
     },
     {
       "path": "payload/selection-actions/product/plugins/selection-actions/src/client/flow.ts",
-      "size": 4903,
-      "sha256": "e84385a41636852e7abb2feebe379645ebeb3710e28a573744fe39b3c79e52b1"
+      "size": 5242,
+      "sha256": "fad96682ac4240428c9ab7c52ba5599d73af4c956b767c565061846f242fccce"
     },
     {
       "path": "payload/selection-actions/product/plugins/selection-actions/src/client/icons.tsx",
-      "size": 1799,
-      "sha256": "b7ce4fd72ffafbfa5150d15feff92f7a24ce59c537ef33f45c1cb5085bb831cb"
+      "size": 1814,
+      "sha256": "9e7112541e0ba45f848dbbfe5be119806d7be9dcf69c0e257bfddacb2a9614d0"
     },
     {
       "path": "payload/selection-actions/product/plugins/selection-actions/src/client/index.ts",
-      "size": 5319,
-      "sha256": "a67d8ef62a51d8485e5d66aaeb11c9ef8fd6259295f901fb827bbc6e04ff52aa"
+      "size": 5575,
+      "sha256": "0ac3de86f9552cb945eda7d057f2100eb9f778fdfad8e6e8fdf445982dc7a137"
     },
     {
       "path": "payload/selection-actions/product/plugins/selection-actions/src/client/locales.ts",
@@ -264,31 +760,6 @@
       "sha256": "01f276658515e962d05a4dd80d4ea0aa1df52fc0105194b598c4e7eb5460bc74"
     },
     {
-      "path": "payload/selection-actions/product/plugins/selection-actions/src/client/SelectionActions.module.css",
-      "size": 2486,
-      "sha256": "677adb0ff8acb51dbddbf96b52825b0a244931c3cc049327458f4b5d7b7741b5"
-    },
-    {
-      "path": "payload/selection-actions/product/plugins/selection-actions/src/client/SelectionActions.tsx",
-      "size": 7661,
-      "sha256": "1064800b61007ec9234d0c25cb6ae54617596246feffda77729f2cf3eee1ff73"
-    },
-    {
-      "path": "payload/selection-actions/product/plugins/selection-actions/src/client/SelectionReferenceDock.module.css",
-      "size": 1964,
-      "sha256": "d613c6a9c8098cce1f2d2718601dfd0cf95f719a679deeb09bdc8d92d6dcd54b"
-    },
-    {
-      "path": "payload/selection-actions/product/plugins/selection-actions/src/client/SelectionReferenceDock.tsx",
-      "size": 2004,
-      "sha256": "0ae132ab6ac0da12c9014a77e7761633d256e243395811dbc48e4ea95766981c"
-    },
-    {
-      "path": "payload/selection-actions/product/plugins/selection-actions/src/client/SelectionSourceMarker.tsx",
-      "size": 2414,
-      "sha256": "c34cb5df47d448efd2155866c8b641d8fcb8499a650a6540af9df8c067c785f1"
-    },
-    {
       "path": "payload/selection-actions/product/plugins/selection-actions/src/css-modules.d.ts",
       "size": 109,
       "sha256": "1b119eae282e4981c7ee24bbcf0ceafe34d57f6d5e6b148b2b7cc7c09cd89513"
@@ -299,39 +770,49 @@
       "sha256": "944a8c3670d4ffe25aa2c5205c58bd868d5c7891795bd337b323d6ff4b3e2545"
     },
     {
-      "path": "payload/selection-actions/product/plugins/selection-actions/src/invariant.ts",
-      "size": 567,
-      "sha256": "aec333c27004df217ae0d215d7aea9d31e47b50438dc574b048b7a96cb3efac5"
-    },
-    {
       "path": "payload/selection-actions/product/plugins/selection-actions/tsconfig.json",
-      "size": 769,
-      "sha256": "5f4328c68631725e58c7e9e27ac6316fafa6b6847bfcd17176b83e0c2e1cd299"
+      "size": 926,
+      "sha256": "57a80af6f6be78af2d3d625d4819bb65e83038e4611cec13a215c41177398989"
     },
     {
       "path": "payload/selection-actions/product/plugins/selection-actions/tsdown.config.ts",
-      "size": 185,
-      "sha256": "538e402650005a940446c0efe6ff25953aa378d45c3dd6bb8501bcde491c54bf"
+      "size": 165,
+      "sha256": "55cce806803f864129b249ea398bede30918f0449ed34c04e6fa3a755fb91b06"
     },
     {
-      "path": "payload/shared/settings-icons.patch",
-      "size": 3863,
-      "sha256": "77e0d4dd0bb02e1946301320ec813972f5cfc0054c408c5e5dd44690e5f692a4"
+      "path": "payload/shared/deliverable-file-path.patch",
+      "size": 2379,
+      "sha256": "65120b70cad2e196a4bee54911eced508f45818dc7dac1f1d7fd4a9de1ff3c73"
+    },
+    {
+      "path": "payload/shared/native-plugin-loading.patch",
+      "size": 23851,
+      "sha256": "136f4832023c8422906bbd86ede896ecb26d066931abf59db6fe2d094d4f2325"
+    },
+    {
+      "path": "payload/shared/session-state-compatibility.patch",
+      "size": 19961,
+      "sha256": "58bc1b86e2a347d0e29477877f96190379b04dc07bb3f37bd7f0f37fc3a3fef2"
+    },
+    {
+      "path": "payload/shared/settings-and-ui-slots.patch",
+      "size": 73183,
+      "sha256": "ce217a393adba9a3c3d1692ea14868a7d8f3d4e936a3895c216ae1f7d136a176"
     }
+  ],
+  "compatibilityPatches": [
+    "payload/shared/native-plugin-loading.patch",
+    "payload/shared/settings-and-ui-slots.patch",
+    "payload/shared/session-state-compatibility.patch",
+    "payload/shared/deliverable-file-path.patch"
   ],
   "excludes": [
     "node_modules",
-    "Git metadata",
-    "tests",
-    "caches",
     "credentials",
     "sessions",
-    "conversation history",
-    "user settings"
-  ],
-  "sourceRepository": "https://github.com/niushuanan/xiaozhuang-dsh",
-  "repository": "https://github.com/niushuanan/dsh-selection-memory",
-  "compatibilityPatches": [
-    "payload/shared/settings-icons.patch"
+    "attachments",
+    "user settings",
+    "caches",
+    "test outputs"
   ]
 }
