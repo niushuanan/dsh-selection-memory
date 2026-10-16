@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "kind": "xiaozhuang-dsh-plugin-export",
-  "createdAt": "2026-10-06T18:40:04.058033+00:00",
-  "sourceCommit": "efbbbc6a1977cf4559bf306221533eb16393664c",
+  "createdAt": "2026-10-16T06:43:21.615176+00:00",
+  "sourceCommit": "37f1223134fd7e07b1e4360a932a0c257f21a712",
   "sourceRepository": "https://github.com/niushuanan/xiaozhuang-dsh",
   "repository": "https://github.com/niushuanan/dsh-selection-memory",
   "targetHarness": "0.2.1-alpha.1",
@@ -40,7 +40,7 @@
           "path": "plugins/memory-system"
         }
       ],
-      "version": "0.2.0"
+      "version": "0.2.1"
     }
   ],
   "files": [
@@ -66,18 +66,28 @@
     },
     {
       "path": "payload/memory-system/product/plugins/memory-system/lib/client.js",
-      "size": 18014,
-      "sha256": "e0ed1ab20b5ee17350d774ebee8dd293dbd81a1e8f02e8746095ee550f5a9544"
+      "size": 19248,
+      "sha256": "61f112eb0babe5b8c7a996246267d61ab43d58559a1c1fc8f6de40c9306491cd"
     },
     {
       "path": "payload/memory-system/product/plugins/memory-system/lib/client.js.map",
-      "size": 22680,
-      "sha256": "122cae3fc4f07b3a996348fd3b4cb05cc391be3f011f94e4ed4aed33867a1530"
+      "size": 24360,
+      "sha256": "03695fb97dd910d4e21fae80bb70931be80ef37a14dfc38750011f3e0eb2207c"
     },
     {
       "path": "payload/memory-system/product/plugins/memory-system/lib/index.js",
       "size": 36792,
       "sha256": "2d204447187e19a7ce46672718b14613f38417be242c0f9fc965d2a0f66da505"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/tsconfig.client.tsbuildinfo",
+      "size": 62810,
+      "sha256": "e5ca0fb17b1f23ce12e81491075063231935755c7ce3328f38e8fe7b74c65ecc"
+    },
+    {
+      "path": "payload/memory-system/product/plugins/memory-system/lib/tsconfig.host.tsbuildinfo",
+      "size": 75659,
+      "sha256": "22e6a2cf294bc65c7893ed543db4688dec505e95c5e50b6d0291ed0091d22906"
     },
     {
       "path": "payload/memory-system/product/plugins/memory-system/lib/types/api.d.ts",
@@ -342,7 +352,7 @@
     {
       "path": "payload/memory-system/product/plugins/memory-system/package.json",
       "size": 3017,
-      "sha256": "0c8b5160ef81e55d0e8414fc7f42164a681f8e84caec711c89c823966679b963"
+      "sha256": "abee0f394c7a4961b9fbed1a4875b75b1e8133b46de8b238f46d3797cb65c1a2"
     },
     {
       "path": "payload/memory-system/product/plugins/memory-system/src/api.ts",
@@ -360,14 +370,19 @@
       "sha256": "2f6823486a10b3d267ac8def904317cfa74ba8cb0606accda0029df93877ee0e"
     },
     {
+      "path": "payload/memory-system/product/plugins/memory-system/src/client/SettingsIcon.tsx",
+      "size": 953,
+      "sha256": "f2f0504074b44afe4549ba387b5129c0c61f9556393705fe3d8d19e28b5c1f42"
+    },
+    {
       "path": "payload/memory-system/product/plugins/memory-system/src/client/api.ts",
       "size": 2417,
       "sha256": "839c0d54a935f72d96fc4fd53adc19074a1e7e6554d8a4b17a8e2d53c024e6bd"
     },
     {
       "path": "payload/memory-system/product/plugins/memory-system/src/client/index.ts",
-      "size": 1217,
-      "sha256": "4c1c1b10195c9d0b085fe03f6a08d3d6209681253649a4ef840ead85784c7cc6"
+      "size": 1427,
+      "sha256": "f7bf7cd2f20db7c1f6c0488354e9241bef46df68a1de241cb6ecb0dd7f9b0f9e"
     },
     {
       "path": "payload/memory-system/product/plugins/memory-system/src/client/locales.ts",
@@ -796,8 +811,8 @@
     },
     {
       "path": "payload/shared/settings-and-ui-slots.patch",
-      "size": 73183,
-      "sha256": "ce217a393adba9a3c3d1692ea14868a7d8f3d4e936a3895c216ae1f7d136a176"
+      "size": 73187,
+      "sha256": "480f6615d48fe4b424c9f8265a6140a3d769aff61097da849732e0fe6232c11c"
     }
   ],
   "compatibilityPatches": [
